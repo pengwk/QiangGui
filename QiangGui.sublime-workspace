@@ -1,0 +1,1363 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ipv6",
+				"ipv6_soup"
+			],
+			[
+				"data",
+				"data_list"
+			],
+			[
+				"_get",
+				"_get_parse_home_page"
+			],
+			[
+				"intra",
+				"ipv4_intranet"
+			],
+			[
+				"_ch",
+				"_check_intranet"
+			],
+			[
+				"_che",
+				"_check_network_enable"
+			],
+			[
+				"v4",
+				"v4_time_hour"
+			],
+			[
+				"v4_tim",
+				"v4_time_min"
+			],
+			[
+				"v6",
+				"v6_flow_mbyte"
+			],
+			[
+				"v4_",
+				"v4_flow_byte"
+			],
+			[
+				"login",
+				"login"
+			],
+			[
+				"ipv4",
+				"ipv4_enable"
+			],
+			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"s",
+				"strip"
+			],
+			[
+				"su",
+				"sup	Tag"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"App",
+				"Append"
+			],
+			[
+				"menu",
+				"menu2"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"able",
+				"ableCourse"
+			],
+			[
+				"ite",
+				"iteritems"
+			],
+			[
+				"Selec",
+				"SelectedPanel"
+			],
+			[
+				"course",
+				"course"
+			],
+			[
+				"want",
+				"wantPanel"
+			],
+			[
+				"Sele",
+				"SelectPanel"
+			],
+			[
+				"Se",
+				"SelectPanel"
+			],
+			[
+				"ALIGN_C",
+				"ALIGN_CENTER"
+			],
+			[
+				"sel",
+				"selectedman"
+			],
+			[
+				"cap",
+				"capacity"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"wante",
+				"wantAble"
+			],
+			[
+				"Able",
+				"AbleId"
+			],
+			[
+				"coure",
+				"course_name"
+			],
+			[
+				"Ab",
+				"AbleId"
+			],
+			[
+				"SetItem",
+				"SetItemData"
+			],
+			[
+				"Get",
+				"GetEventObject"
+			],
+			[
+				"index",
+				"indexPage"
+			],
+			[
+				"get_",
+				"get_text"
+			],
+			[
+				"find",
+				"find_all"
+			],
+			[
+				"cour",
+				"courseList"
+			],
+			[
+				"couse",
+				"courseList"
+			],
+			[
+				"page",
+				"pageNum"
+			],
+			[
+				"cous",
+				"courseList"
+			],
+			[
+				"Lo",
+				"Logout"
+			],
+			[
+				"Course",
+				"courseId"
+			],
+			[
+				"Select",
+				"SelectCourse"
+			],
+			[
+				"or",
+				"orderlist"
+			],
+			[
+				"EVT",
+				"EVT_LIST_ITEM_SELECTED"
+			],
+			[
+				"Add",
+				"AddMany"
+			],
+			[
+				"log",
+				"login_btn"
+			],
+			[
+				"cata",
+				"catalog"
+			],
+			[
+				"Panel",
+				"Panel"
+			],
+			[
+				"get",
+				"get_user_info"
+			],
+			[
+				"ca",
+				"campus"
+			],
+			[
+				"username",
+				"username"
+			],
+			[
+				"css",
+				"css_js_urls"
+			],
+			[
+				"cas",
+				"cas_login_url"
+			],
+			[
+				"ver",
+				"verify_cookie"
+			],
+			[
+				"tyxk",
+				"tyxk_index"
+			],
+			[
+				"ty",
+				"tyxk_index_url"
+			],
+			[
+				"token",
+				"token_url"
+			],
+			[
+				"cookie",
+				"cookie_BIG"
+			],
+			[
+				"cas_",
+				"cas_cookies_ASPX"
+			],
+			[
+				"pos",
+				"post_headers"
+			],
+			[
+				"prin",
+				"print_cookies"
+			],
+			[
+				"cookies",
+				"cookies"
+			],
+			[
+				"X",
+				"X-Requested-With"
+			],
+			[
+				"_",
+				"_"
+			],
+			[
+				"h",
+				"hsizer1"
+			],
+			[
+				"hs",
+				"hsizer2"
+			],
+			[
+				"bmp",
+				"bmp"
+			],
+			[
+				"ren",
+				"render_to_response"
+			],
+			[
+				"ma",
+				"max_length"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"img",
+				"imgname"
+			],
+			[
+				"se",
+				"session"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"mag",
+				"margin-left"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"read",
+				"readInMemery"
+			],
+			[
+				"Model",
+				"Model"
+			],
+			[
+				"Tur",
+				"swampy.TurtleWorld"
+			],
+			[
+				"t",
+				"thead	Tag"
+			],
+			[
+				"set",
+				"setup"
+			],
+			[
+				"hot",
+				"hot"
+			],
+			[
+				"sa",
+				"small	Tag"
+			],
+			[
+				"a",
+				"Account"
+			],
+			[
+				"v",
+				"v4ip1"
+			],
+			[
+				"mo",
+				"Model"
+			],
+			[
+				"stat",
+				"start"
+			],
+			[
+				"tim",
+				"timeer"
+			],
+			[
+				"time",
+				"timeer"
+			],
+			[
+				"dump",
+				"json.dumps"
+			],
+			[
+				"loa",
+				"json.loads"
+			],
+			[
+				"flo",
+				"flow"
+			],
+			[
+				"ser",
+				"serverUrl"
+			],
+			[
+				"co",
+				"r1.cookies"
+			],
+			[
+				"rpi",
+				"rpiData"
+			],
+			[
+				"fin",
+				"h.findAll"
+			],
+			[
+				"st",
+				"startTime"
+			],
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"me",
+				"meta"
+			],
+			[
+				"n",
+				"nGPIO"
+			],
+			[
+				"ge",
+				"getCommand"
+			],
+			[
+				"c",
+				"%connect_info"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "qiang.py",
+			"settings":
+			{
+				"buffer_size": 7380,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "PayImage.py",
+			"settings":
+			{
+				"buffer_size": 76,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "helper.py",
+			"settings":
+			{
+				"buffer_size": 1417,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "login.py",
+			"settings":
+			{
+				"buffer_size": 15173,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "LoginDialog.py",
+			"settings":
+			{
+				"buffer_size": 2841,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "dialog.py",
+			"settings":
+			{
+				"buffer_size": 1877,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c.sublime-build",
+					""
+				],
+				[
+					"Packages/User/c.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/c.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				],
+				[
+					"Packages/User/Python.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "pep",
+		"selected_items":
+		[
+			[
+				"pep",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"l",
+				"MarkdownEditing: Markdown Lint"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"lin",
+				"MarkdownEditing: Markdown Lint"
+			],
+			[
+				"ma",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ipyt",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"mak",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ipy",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"side",
+				"Browse Mode: Left Sidebar"
+			],
+			[
+				"emmet",
+				"Emmet: Balance (inward)"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"align",
+				"Preferences: Alignment Key Bindings – Default"
+			],
+			[
+				"py",
+				"Build With: Python - Syntax Check"
+			],
+			[
+				"tag",
+				"Tag: Auto-Format Tags on Document"
+			],
+			[
+				"view",
+				"View In Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ta",
+				"Tag: Auto-Format Tags on Document"
+			],
+			[
+				"che",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"chea",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"vie",
+				"View In Browser"
+			],
+			[
+				"makr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"c",
+				"Set Syntax: C"
+			],
+			[
+				"c++",
+				"Set Syntax: C++"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"run",
+				"SublimeREPL: Python - RUN current file"
+			],
+			[
+				"ip",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"git comm",
+				"Git: Quick Commit Current File"
+			],
+			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ipyth",
+				"SublimeREPL: Python - IPython"
+			],
+			[
+				"emmt",
+				"Set Syntax: Emmet"
+			],
+			[
+				"fil",
+				"Browse Mode: Current file or project"
+			],
+			[
+				"File b",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"git branch",
+				"Git: New Branch"
+			],
+			[
+				"git commit c",
+				"Git: Quick Commit Current File"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"gits",
+				"Git: Status"
+			],
+			[
+				"gitflow",
+				"Git-flow: Feature Finish"
+			],
+			[
+				"git",
+				"Git: Help"
+			],
+			[
+				"dird",
+				"Browse Mode: Left Sidebar"
+			]
+		],
+		"width": 528.0
+	},
+	"console":
+	{
+		"height": 950.0,
+		"history":
+		[
+			"range(1,3)",
+			"str(2)",
+			"print('\\t')",
+			"print('\\a')",
+			"print '\\a'",
+			"pull",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"print('d')",
+			"print 'd'"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/wk/OneDrive/W/QiangGui"
+	],
+	"file_history":
+	[
+		"/C/Users/wk/OneDrive/W/QiangGui/.gitignore",
+		"/C/Users/wk/OneDrive/W/wxpython/.gitignore",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/try.log",
+		"/C/Users/wk/AppData/Local/Temp/Rar$DIb0.884/USE PASSWORD - 12345.txt",
+		"/C/Users/wk/OneDrive/W/miscellaneous/willpower_split.py",
+		"/E/学校课程资料/复变/复变函数与积分变换作业.txt",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/flow.py",
+		"/C/Users/wk/OneDrive/W/wxpython/编码心得.md",
+		"/C/Users/wk/OneDrive/W/wxpython/英语帮助.md",
+		"/C/Users/wk/Desktop/code/myproject/qiang.py",
+		"/C/Users/wk/OneDrive/W/wxpython/术语.md",
+		"/C/Users/wk/OneDrive/W/wxpython/Exception.md",
+		"/C/Users/wk/OneDrive/W/wxpython/pep8.md",
+		"/C/Users/wk/OneDrive/W/wxpython/problem-map.md",
+		"/C/Users/wk/Downloads/复变函数与积分变换作业.txt",
+		"/C/Python27/Lib/site-packages/pydub/audio_segment.py",
+		"/C/Users/wk/OneDrive/W/wxpython/Python网络工具.md",
+		"/C/Python27/Lib/site-packages/pydub/utils.py",
+		"/C/Users/wk/Desktop/code/myproject/qiang.spec",
+		"/C/Python27/Lib/site-packages/pydub/__init__.py",
+		"/C/Python27/Lib/site-packages/pydub/exceptions.py",
+		"/C/Users/wk/Downloads/ff-prompt.bat",
+		"/C/Users/wk/Downloads/README.txt",
+		"/C/Users/wk/Downloads/win32/VERSION",
+		"/C/Users/wk/OneDrive/shadowsock-config.js",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/编码心得.md",
+		"/C/Users/wk/OneDrive/W/wxpython/字符串和编码.md",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/my_data.py",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/conf.py",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/NetworkManager.rst",
+		"/C/Users/wk/OneDrive/W/wxpython/Sphinx文档.md",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/QiangKeDoc.rst",
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/intro.rst",
+		"/C/ws/.ipython/README",
+		"/C/ws/.ipython/profile_default/startup/00-modules.py",
+		"/C/ws/.ipython/profile_default/startup/README",
+		"/E/book/Shadowsocks-win-2.5.6/pac.txt",
+		"/C/Users/wk/Desktop/code/report_ip.py",
+		"/C/Users/wk/OneDrive/W/wxpython/问题.md",
+		"/C/Users/wk/OneDrive/W/wxpython/大纲.md",
+		"/C/Users/wk/OneDrive/W/pengwk.com/pengwk.com",
+		"/C/Users/wk/OneDrive/W/pengwk.com/git-server.md",
+		"/C/Users/wk/Desktop/sshd_config",
+		"/C/Users/wk/OneDrive/W/Raspberry/权限.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/大纲.md",
+		"/C/Users/wk/OneDrive/W/pengwk.com/Debian登录记录.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/软件或系统编译.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/常用配置文件.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/Shell基本.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/连接.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/未知.md",
+		"/C/Users/wk/OneDrive/W/pengwk.com/Debian 后台.md",
+		"/C/Users/wk/OneDrive/W/pengwk.com/Debian 端口.md",
+		"/C/Users/wk/OneDrive/W/pengwk.com/阿里云推广.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/自动化.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/系统本身.md",
+		"/C/Users/wk/Downloads/涓嶈兘鐧粂outude鐨勮В鍐虫柟妗_txt",
+		"/C/Users/wk/OneDrive/W/Markdown.md",
+		"/C/Windows/ADVPCB99SE.INI",
+		"/C/Windows/AdvSch99SE.ini",
+		"/C/Users/wk/AppData/Local/VirtualStore/Windows/AdvSch99SE.ini",
+		"/E/Program/protel 99 se/System/ADVPCB.XRF",
+		"/E/Program/protel 99 se/System/advpcb.rcs",
+		"/E/Program/protel 99 se/System/ADVPCB.INS",
+		"/C/Users/wk/AppData/Local/Temp/xshDCDC.tmp",
+		"/C/Users/wk/OneDrive/W/Raspberry/file/xshell/SolarizedDark.xcs",
+		"/C/Users/wk/OneDrive/W/Raspberry/SolarizedLight.xcs",
+		"/C/Users/wk/OneDrive/Documents/solarized_light.xcs",
+		"/C/Users/wk/Documents/WindowsPowerShell/solarized-dark.reg",
+		"/C/Users/wk/Documents/WindowsPowerShell/a.reg",
+		"/C/Users/wk/OneDrive/W/Raspberry/启动级别.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/硬件.md",
+		"/C/Users/wk/OneDrive/W/Raspberry/基本操作.md",
+		"/C/Users/wk/Desktop/课程表.PNG",
+		"/C/Users/wk/OneDrive/W/Raspberry/rpibook.sublime-project",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/init/mounted-proc.conf",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/resolv.conf",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rsyslog.conf",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/sysctl.conf",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/inittab",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rc.local",
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rcS.d/README",
+		"//RASPBERRYPI/quanbu/etc/rpi-issue",
+		"/C/Users/wk/Downloads/ModCalcProject (1).txt",
+		"/C/Users/wk/Desktop/hosts",
+		"/C/Windows/System32/Drivers/etc/hosts",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/README.md",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Markdown (Standard).sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Bold and Italic Markers.tmPreferences",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/View In Browser/View In Browser.sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Installed Packages/Markdown Preview.sublime-package",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/MultiMarkdown.sublime-settings",
+		"/C/Users/wk/Desktop/code/try/xcjc.py",
+		"/C/Users/wk/Desktop/code/myproject/speed.py",
+		"/C/Users/wk/Desktop/code/myproject/login.py",
+		"/C/Program Files/OpenVPN/doc/INSTALL-win32.txt",
+		"/C/Users/wk/AppData/Local/Temp/is-J0IG1.tmp/license.txt",
+		"/C/Users/wk/Downloads/mailreport (1)",
+		"/C/Users/wk/Desktop/code/ip.py",
+		"//RASPBERRYPI/quanbu/etc/network/if-up.d/wpasupplicant",
+		"//RASPBERRYPI/quanbu/etc/network/interfaces",
+		"//RASPBERRYPI/quanbu/etc/wpa_supplicant/wpa_supplicant.conf",
+		"//RASPBERRYPI/quanbu/var/log/syslog",
+		"//RASPBERRYPI/quanbu/var/log/samba/log.wawo",
+		"//RASPBERRYPI/quanbu/var/log/unattended-upgrades/unattended-upgrades-shutdown.log",
+		"//RASPBERRYPI/quanbu/var/log/fsck/checkroot",
+		"//RASPBERRYPI/quanbu/var/log/fsck/checkfs",
+		"//RASPBERRYPI/quanbu/var/log/nginx/access.log",
+		"//RASPBERRYPI/quanbu/var/log/nginx/error.log",
+		"//RASPBERRYPI/quanbu/var/log/messages",
+		"//RASPBERRYPI/quanbu/var/log/faillog",
+		"//RASPBERRYPI/quanbu/var/log/mail.log",
+		"//RASPBERRYPI/quanbu/var/log/minidlna.log",
+		"//RASPBERRYPI/quanbu/var/log/regen_ssh_keys.log",
+		"//RASPBERRYPI/quanbu/var/log/wtmp",
+		"//RASPBERRYPI/quanbu/var/log/user.log",
+		"//RASPBERRYPI/quanbu/var/log/debug.1",
+		"//RASPBERRYPI/quanbu/var/log/debug",
+		"//RASPBERRYPI/quanbu/usr/sbin/service",
+		"//RASPBERRYPI/quanbu/usr/sbin/update-rc.d",
+		"//RASPBERRYPI/quanbu/etc/init.d/minidlna",
+		"//RASPBERRYPI/quanbu/etc/init.d/rc.local"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 137.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"elif",
+			"else",
+			"NetworkManager",
+			"raw_html",
+			"True",
+			":",
+			"Change",
+			"Change Libr",
+			"Count",
+			"Change",
+			"Change Libr",
+			"所有者可以读写，用户组，其他用户只能读，新建文件夹的默认权限是0755，拥有者可以读写执行，用户组和其他用户可以读和执行。",
+			"port-map",
+			"dht",
+			"allCourse",
+			"Append",
+			"Beauti",
+			"tyxk_index",
+			"casurl",
+			"baseurl",
+			"MyFrame",
+			"iframe",
+			"pub_time",
+			"201400004144",
+			"cjPic",
+			"jpg",
+			"功能",
+			"timeer",
+			"受"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"self.allCourse",
+			"cas_base_url",
+			"tyxk_base_url",
+			"收"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "qiang.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "PayImage.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "helper.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "login.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5818,
+								5818
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3836.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "LoginDialog.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2841,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2568,
+								2568
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "dialog.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1877,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								784,
+								784
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 40.0
+	},
+	"input":
+	{
+		"height": 72.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 135.0
+	},
+	"output.find_results":
+	{
+		"height": 256.0
+	},
+	"output.git":
+	{
+		"height": 256.0
+	},
+	"output.git-commit":
+	{
+		"height": 346.0
+	},
+	"output.git-init":
+	{
+		"height": 225.0
+	},
+	"output.markdown":
+	{
+		"height": 232.0
+	},
+	"output.mde":
+	{
+		"height": 546.0
+	},
+	"pinned_build_system": "",
+	"project": "QiangGui.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\wk\\OneDrive\\W\\pengwk.com\\pengwk.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 165.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
