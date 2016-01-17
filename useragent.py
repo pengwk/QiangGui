@@ -24,3 +24,12 @@ def rand_agent():
     """
     user_agent = random.choice(user_agents.values())
     return user_agent
+
+
+def header(Host,Cookie,Referer,ContentType,Origin,UserAgent):
+    u"""产生header
+
+    """
+    return nice_header
+
+
