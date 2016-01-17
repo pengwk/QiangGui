@@ -10,12 +10,13 @@ __doc__ = u"tyxk登录 返回cookie：PHPSESSID"
 UserAgent = useragent.rand_agent()
 
 
-def _header(Host=None, Cookie=None, Referer=None, ContentType=None, Origin=None):
+def _header(**_dict):
     u"""产生header
-
+    Host=None, Cookie=None, Referer=None, ContentType=None, Origin=None
     """
-    general = {"Progma": "no-cache"}
-    return nice_header
+    general = {"Progma": "no-cache",
+               ""}
+    return general.update(_dict)
 
 
 urls = {"login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login",
