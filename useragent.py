@@ -26,10 +26,5 @@ def rand_agent():
     return user_agent
 
 
-def header(Host,Cookie,Referer,ContentType,Origin,UserAgent):
-    u"""产生header
-
-    """
-    return nice_header
 
 
