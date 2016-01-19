@@ -4,12 +4,16 @@
 		"selected_items":
 		[
 			[
-				"def",
-				"def	Function"
+				"cas",
+				"cas_host"
 			],
 			[
-				"cas",
-				"cas_post"
+				"cas_",
+				"cas_jwxt"
+			],
+			[
+				"def",
+				"def	Function"
 			],
 			[
 				"ipv6",
@@ -256,10 +260,6 @@
 				"cookie_BIG"
 			],
 			[
-				"cas_",
-				"cas_cookies_ASPX"
-			],
-			[
 				"pos",
 				"post_headers"
 			],
@@ -480,29 +480,18 @@
 			}
 		},
 		{
-			"file": "tyxk_auth.py",
+			"file": "auth.py",
 			"settings":
 			{
-				"buffer_size": 4192,
+				"buffer_size": 8319,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "useragent.py",
-			"settings":
-			{
-				"buffer_size": 1699,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "# 杂碎的笔记\n\n## 从字典里随机选择一个值\n\n```python\nimport random\n\ndict_ = {\"key2\": \"value1\",\n       \"key2\": \"value2\"}\n\nrandkey = random.choice(dict_.key()) # python2.x\nrandkey = random.choice(list(dict_.keys()))  # python3.x\n```\n\n`random.choice(seq)` 只接受序列（列表，字符串、、、），直接使用字典就不可以。可以将字典里全部的`键`或`值`转换为一个列表`dict_.keys()`或者`dict_.values()`，在Python3.x中返回的是可迭代器（iterator），所以要使用`list(dict_.keys())`.\n\n这样就可以将字典里的值或键随机取出。\n\n## Cookies\n\nrequests 请求http是怎么加入多个cookie呢？\n\n`cookie: cookie1=baba;cookie2=babab`\n\n#### HttpOnly\n\n这个是用来减少`xss`攻击的。设置之后不能再脚本里获取这个cookie\n\n#### no-cache = \"set-cookie\"\n\n不太清楚\n\n\n## 字典的困惑 {\"key\": \"value\"} + {\"value\": \"key\"}\n\n字典要是相加不改变原来的就好了： 相加没有副作用\n\n利用函数闭包就好了\n\n```python\ndef dict_(value):\n    _dict = {\"already\": \"1\"}\n    return _dict.update({\"key\": value})\n```\n\n## 获取函数的参数\n\n```python\ndef fun_1(**_dict):\n    print type(_dict)\n    print _dict\n    return None\n\ndef fun_2(*_tuple):\n    print type(_tuple)\n    print _tuple\n    return None\n\nIn [2]: fun(ni=\"ni\")\n<type 'dict'>\n{'ni': 'ni'}\n\nIn [5]: fun2(\"ni\")\n<type 'tuple'>\n('ni',)\n```\n\n`*identifier`： 位置参数全部收集到一个元组`(\"tuple\",)`默认为空\n\n`**identifier`： 关键字参数收集成为一个字典`{}`默认为空\n\n#### 解包是什么鬼？ unpack\n\n```python\npack = (\"1\", \"2\", \"3\")\n# unpack\none, two, three = pack\n\nIn [9]: one\nOut[9]: '1'\n\n```\n解包是将序列映射到变量上的方法\n\n## 命令行参数\n\n```python\nfrom sys import argv\n\na, b, c = argv\n```\n\n##　关闭`requests`的重定向功能 https 检查 及其警告\n\n```python\nimport requests\n\nrequests.packages.urllib3.disable_warnings()\n\nurl = \"http://www.pengwk.com\"\nrequests.get(url, allow_redirects=False, verify=False)\n```\n\n#### cookies 变成字典 \n\n```python\nimport requests\n\nres = requests.get(url)\nres.cookies.get_dict()\n\nIn [14]: res.cookies.get_dict()\nOut[14]: {'PHPSESSID': '2c53m9h6ij3h1fi9rmrmid26g0'}\n```\n\n\n## Command–query separation\n\n<https://en.wikipedia.org/wiki/Command%E2%80%93query_separation>\n\n\nPython's mostly implementing a pragmatically tinged flavor of command-query separation: mutators return None (with pragmatically induced exceptions such as pop;-) so they can't possibly be confused with accessors (and in the same vein, assignment is not an expression, the statement-expression separation is there, and so forth).\n\n\n## BeautifulSoup 提取数据\n\n###### 关键字\n\n`find_all` `find` `class`  `css` `html` `tag` `string` `get_text` `attr` `name`\n\n`input` `form` `value` `Tag` `NavigableString` `BeautifulSoup` `Comment`\n\n#### html本身组成\n\n```html\n<!DOCTYPE html>\n<html>\n<head>\n    <title></title>\n</head>\n<body>\n\n</body>\n</html>\n```\n###### Tag 节点\n\n```html\n<a href=\"pengwk.com/\">pengwk.com</a>  <!-- 一个节点-->\n```\n```python\nfrom bs4 import BeautifulSoup\n\nsoup = BeautifulSoup(\"<a href=\"pengwk.com\" class=\"red\" id=\"blog\">pengwk's personal website</a>\")\n\ntag = soup.a\ntype(tag)\n\nIn [54]: type(soup.a)\nOut[54]: bs4.element.Tag\n\n```\n&emsp;&emsp;`BeautifulSoup` 里的`Tag`对象（object）它代表了 `HTML` 或者 `XML` 文档里的`Tag`。\n\n节点是有名字的`<a href=\"\"></a>`中的`a`\n\n也是有属性的 可以搜索 \n\n层级关系 父母 孩子 同辈 \n\n使用函数搜索 可以将多种参数作为搜索条件 函数判断 属性判断  正则表达式 搜索内容`string`\n\ncss 选择器 CSS是HTML中用来标记节点类别服务于调整外观\n\n使用CSS class 类搜索\n```python\nfrom bs4 import BeautifulSoup\n\ncss_soup = BeautifulSoup(\"<p class=\"Bold Nice\">This is a paragraph</p>\")\n\ncss_soup.find_all(\"p\", class_=\"Bold\")\n\ncss_soup.find_all(\"p\", class_=\"Nice\")\n\ncss_soup.find_all(\"p\", class_=\"Bold Nice\") # 顺序不能反 eg:Nice Bold\n\n```\n\n###### 关键字参数搜索\n\n&emsp;&emsp;关键字参数搜索用于在节点中找到`<p id=\"new\" data-switch=\"ok\"></p>`\n`id`为具体值的节点 如果包含连接线的，或者其他Python不能允许的字符时，可以将键值对变成字典传入。\n\n```python\nfrom bs4 import BeautifulSoup\n\nsoup = BeautifulSoup(\"<p id=\"new\" data-switch=\"ok\"></p>\")\nsoup.find_all(id=\"new\")\n\nsoup.find_all(attr={\"data-switch\": True})\n```\n\nstring 对象转换为Unicode对象 `unicode(soup.b.string)`\n\n###### 位置参数搜索\n\n默认的位置参数搜索是`name`\n\n```python\nfrom bs4 import BeautifulSoup\n\nsoup = BeautifulSoup(\"<title></title>\")\nsoup.find_all(\"title\")\n```\n\n###### 其他\n\n列表：搜索任意在列表里的项目\n函数：符合条件返回`True`\n正则表达式\n\n###### 字符集处理\n\nUnicode Dammit\n\nMicrosoft Smart quotes\n\nInconsistent encoding Windows1252\n\nUnicodeDammit.detwingle()\n\n#### requests\n\n`requests.Response.text` `requests.Response.content` 区别\n\n第一个返回的是`Unicode`字符串，编码方式是由`chardet`或者`Response.encoding`决定 \n\n第二个返回的是`in bytes`\n\n#### 加速\n\n`pip install cchardet` 字符集检测\n\n使用`lxml`作为默认的解析器\n\n",
 			"file": "笔记.md",
-			"file_size": 5443,
-			"file_write_time": 130975984964019646,
 			"settings":
 			{
-				"buffer_size": 4083,
+				"buffer_size": 4846,
 				"line_ending": "Windows"
 			}
 		},
@@ -892,11 +881,13 @@
 	],
 	"file_history":
 	[
+		"/C/Users/wk/OneDrive/W/QiangGui/useragent.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/jwc_auth.py",
+		"/C/Users/wk/Downloads/Sample file.csv",
 		"/C/Users/wk/OneDrive/W/wxpython/Python网络工具.md",
 		"/C/Users/wk/OneDrive/W/wxpython/字符串和编码.md",
 		"/C/Users/wk/OneDrive/W/pengwk.com/git-server/git-server.md",
 		"/C/Users/wk/OneDrive/W/QiangGui/PayImage.py",
-		"/C/Users/wk/OneDrive/W/QiangGui/useragent.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/.gitignore",
 		"/C/Users/wk/OneDrive/W/wxpython/.gitignore",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/try.log",
@@ -1017,9 +1008,7 @@
 		"//RASPBERRYPI/quanbu/var/log/regen_ssh_keys.log",
 		"//RASPBERRYPI/quanbu/var/log/wtmp",
 		"//RASPBERRYPI/quanbu/var/log/user.log",
-		"//RASPBERRYPI/quanbu/var/log/debug.1",
-		"//RASPBERRYPI/quanbu/var/log/debug",
-		"//RASPBERRYPI/quanbu/usr/sbin/service"
+		"//RASPBERRYPI/quanbu/var/log/debug.1"
 	],
 	"find":
 	{
@@ -1037,6 +1026,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"page",
+			"Nice",
 			"dgut",
 			"kvs",
 			"elif",
@@ -1089,7 +1080,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1120,7 +1111,7 @@
 						"translation.y": 800.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1151,7 +1142,7 @@
 						"translation.y": 576.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1182,54 +1173,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "tyxk_auth.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3411,
-								3411
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2592.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "useragent.py",
+					"buffer": 3,
+					"file": "auth.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1699,
+						"buffer_size": 8319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1566,
-								1566
+								4528,
+								4528
 							]
 						],
 						"settings":
@@ -1240,19 +1201,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 384.0,
+						"translation.y": 3264.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "笔记.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4083,
+						"buffer_size": 4846,
 						"regions":
 						{
 							"TagLint":
@@ -1272,25 +1233,27 @@
 						"selection":
 						[
 							[
-								3518,
-								3518
+								4751,
+								4751
 							]
 						],
 						"settings":
 						{
 							"is_xml": false,
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
+							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7122.0,
+						"translation.y": 10073.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "/C/Users/wk/OneDrive/W/wxpython/mycode/flow.py",
 					"semi_transient": false,
 					"settings":
@@ -1302,8 +1265,8 @@
 						"selection":
 						[
 							[
-								6128,
-								6128
+								1422,
+								1422
 							]
 						],
 						"settings":
@@ -1314,14 +1277,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4800.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "LoginDialog.py",
 					"semi_transient": false,
 					"settings":
@@ -1348,11 +1311,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "dialog.py",
 					"semi_transient": false,
 					"settings":
@@ -1379,7 +1342,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1472,7 +1435,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\wk\\OneDrive\\W\\pengwk.com\\pengwk.sublime-workspace"
+				"C:\\Users\\wk\\OneDrive\\W\\wxpython\\wxpython.sublime-project"
 			]
 		],
 		"width": 380.0
