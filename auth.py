@@ -3,22 +3,25 @@
 from bs4 import BeautifulSoup
 import requests
 import logging
-
+import time
 import useragent
 
 __doc__ = u"tyxk登录 返回cookie：PHPSESSID"
 
 logging.basicConfig(
-    format="%(levelname)-10s %(message)s")
+    format="%(levelname)-10s %(message)s",
+    level=logging.DEBUG)
 
 log = logging.getLogger("auth")
-
-log.addHandler(logging.FileHandler("auth.log"))
+handler = logging.FileHandler("auth.log")
+handler.setLevel(logging.DEBUG)
+log.addHandler(handler)
 
 
 requests.packages.urllib3.disable_warnings()
 
 UserAgent = useragent.rand_agent()
+STREAM_FLAG = False
 
 
 def _header(ContentType=None, **_dict):
@@ -48,6 +51,15 @@ def hidden_form(postpage):
         _dict[hidden["name"]] = hidden["value"]
     return _dict
 
+
+def save_html(response, filename):
+    u"""保存requests库请求的页面
+    用于调试
+    """
+    with open(filename, "wb") as html:
+        html.write(response.content)
+    return None
+
 urls = {"login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login",
         "check_login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=check_login",
         "home": "http://tyxk.dgut.edu.cn/index.php?m=Home&c=Student&a=index",
@@ -57,10 +69,16 @@ urls = {"login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login",
         "tyxk_host": "tyxk.dgut.edu.cn",
         "tyxk_base": "http://tyxk.dgut.edu.cn/",
         "cas_base": "https://cas.dgut.edu.cn",
-        "jwxt": "http://jwxt.dgut.edu.cn/jwweb/",
+        #"jwxt": "http://jwxt.dgut.edu.cn/jwweb/",
         "cas_jwxt": "https://cas.dgut.edu.cn/?appid=jwxt",
         "jwxt_post": "https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt",
-        "jwxt_host": "jwxt.dgut.edu.cn"
+        "jwxt_host": "jwxt.dgut.edu.cn",
+        "jwxt_logout": "http://jwxt.dgut.edu.cn/jwweb/sys/Logout.aspx",
+
+        # new url system
+        "cas": "https://cas.dgut.edu.cn",
+        "jwxt": "http://jwxt.dgut.edu.cn",
+        "tyxk": "http://tyxk.dgut.edu.cn"
         }
 
 
@@ -74,42 +92,67 @@ class JWCAuth(object):
         super(JWCAuth, self).__init__()
         self.post_dict = {"UserName": username,
                           "Password": password}
+        self.auth_cookie = None
+        self.auth = requests.Session()
+        self.auth.headers.update(_header())
 
     def login(self):
 
-        step_1 = requests.get(urls["jwxt_post"],
+        step_1 = requests.get(urls["cas"] + "/User/Login",  # urls["jwxt_post"],
+                              params={"ReturnUrl": "/?appid=jwxt",
+                                      "appid": "jwxt"},
                               headers=_header(Host=urls["cas_host"]),
                               allow_redirects=False,
-                              verify=False)
-        log.debug("\nstep_1\nRequest:\n{}Response:{}".format(step_1.url, step_1.headers))
+                              verify=False,
+                              stream=STREAM_FLAG)
+        # for debug
+        save_html(step_1, "step_1.html")
+        log.debug("\nstep_1\nRequest:\n{}\nResponse:\n{}".format(
+            step_1.url, step_1.headers))
+        time.sleep(2)
 
         hiddens = hidden_form(step_1.text)
         form_data = (lambda a, b: b)(hiddens.update(self.post_dict), hiddens)
-        step_2 = requests.post(urls["jwxt_post"],
+        step_2 = requests.post(step_1.url,  # urls["jwxt_post"],
                                headers=_header("application/x-www-form-urlencoded",
-                                               Host=urls["cas_host"],
-                                               Referer=urls["jwxt_post"]),
+                                               Host=urls["cas"][8:],
+                                               Referer=step_1.url),
                                cookies=step_1.cookies,
                                data=form_data,
                                allow_redirects=False,
-                               verify=False
+                               verify=False,
+                               stream=STREAM_FLAG
                                )
-        log.debug("\nstep_2\nRequest:\n{}Response:{}".format(step_2.url, step_2.headers))
-        step_3 = requests.get(urls["cas_jwxt"],
-                              headers=_header(Host=urls["cas_host"],
-                                              Referer=urls["jwxt_post"]),
+        save_html(step_2, "step_2.html")
+        log.debug("\nstep_2\nRequest:\n{}\nResponse:\n{}".format(
+            step_2.url, step_2.headers))
+        time.sleep(0.5)
+
+        step_3 = requests.get(urls["cas"],
+                              params={"appid": "jwxt"},
+                              headers=_header(Host=urls["cas"][8:],
+                                              Referer=step_1.url),
                               allow_redirects=False,
                               verify=False,
                               cookies=(lambda a, b: b)(step_1.cookies.update(
-                                  step_2.cookies), step_1.cookies)
+                                  step_2.cookies), step_1.cookies),
+                              stream=STREAM_FLAG
                               )
-        log.debug("\nstep_1\nRequest:\n{}Response:{}".format(step_3.url, step_3.headers))
+        log.debug("\nstep_3\nRequest:\n{}\nResponse:\n{}".format(
+            step_3.url, step_3.headers))
+        save_html(step_3, "step_3.html")
+        time.sleep(0.5)
         step_4 = requests.get(step_3.headers["location"],
-                              headers=_header(Host=urls["jwxt_host"]),
+                              headers=_header(Host=urls["jwxt"][7:]),
                               allow_redirects=False,
-                              verify=False)
-        log.debug("\nstep_1\nRequest:\n{}Response:{}".format(step_4.url, step_4.headers))
-        return (step_4.cookies, UserAgent)
+                              verify=False,
+                              stream=STREAM_FLAG)
+        log.debug("\nstep_4\nRequest:\n{}\nResponse:\n{}".format(
+            step_4.url, step_4.headers))
+        save_html(step_4, "step_4.html")
+        self.auth_cookie = step_4.cookies
+        self.auth.headers.update(step_4.cookies)
+        return None
 
     def never_give_up(self):
         try_num = 0
@@ -119,6 +162,24 @@ class JWCAuth(object):
                 return self.login()
             except:
                 pass
+
+    def logout(self):
+        res = requests.get(urls["jwxt"] + "/jwweb/sys/Logout.aspx",
+                           cookies=self.auth_cookie,
+                           headers=_header(Host=urls["jwxt_host"],
+                                           Referer=urls["jwxt"] + "/jwweb/SYS/Main_tools.aspx"),
+                           allow_redirects=False,
+                           verify=False)
+        return res
+
+    def get_score(self):
+        form_data = {}
+        post = requests.get(urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx",
+                            cookies=self.auth_cookie,
+                            headers=_header("application/x-www-form-urlencoded",
+                                            Host=urls[jwxt][7:],
+                                            Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx",),
+                            )
 
 
 class TYXKAuth(object):
@@ -203,3 +264,6 @@ class TYXKAuth(object):
             return step_1.cookies
         except:
             return None
+
+    def logout(self):
+        pass

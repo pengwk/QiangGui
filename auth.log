@@ -1,0 +1,503 @@
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxtResponse:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=EZKN-RJgW0TM5-PnQLb6N3cNSUvmGAoDMKvKctBm_8i76ITgK4599wTrmPwBN2nXJ-nOSx_XiBLH6hrZBxStx-kuSD-iCOjtgBjsEiHibZH-GWKgLc8JFtMovr7mDW88OikSCmR_tnujwUPhntlyIQ2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:05:19 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxtResponse:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:05:20 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxtResponse:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:05:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxtResponse:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=A_c49YP_AJ7bIeAAw1RyRxSeNzjTjUxDfgXA1MTA7grjbYNDyzi-rG8gwOc5PmmN9AsqtE52MjxUfwtLCWUPYMd4WwC1q7Df1_xrTH6DQbWpgU-m4fYruud8ci7ph2jCwpVhoID0rM8SSPxqK-6TfA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:09:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxtResponse:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=C3A33CF5E9258EED15EAD9D9C28B694CAD88D406DF223EBE3157C3AADD702237FD835B0C8F29BC3DD5DD323E420C841DCABDACF9785534659063BBA512C5EFE4F7E41A9482DD4C90F0798DDAACAC765D87A0D5A8C48604EFA81961C9BC9FD5E33EBA3B3531124115D7CD2A37A15CAAFFD9E779E7A6A52117BE864898F1B8D3D8BEB3D4951E4786D57E6AAA9F405745E7; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 06:09:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxtResponse:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-4760d4735b438f3f13becb637c8d9e73c1f9b9917118&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Wed, 20 Jan 2016 06:09:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-4760d4735b438f3f13becb637c8d9e73c1f9b9917118&platform=pcResponse:
+{'content-length': '7531', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=sd0dk245dh5qrr3oqmnutv45; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:09:00 GMT', 'content-type': 'text/html; charset=gb2312'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=mVDmfJbQy9X_M3ygMkjLUbe-mRXnYGPapRSNzTqwBBk1RViG_OtyId-thJEefdho-MYux-8A0OMW3AOD0eY6NFJPFmBRq9doMTxrsc7dbsilpLqs3Fx5GBiiIciXYWKEZQZzNAUt2D6Nj4bn6KBbqw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:29:02 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:29:02 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:29:03 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=P-ouEGDfRWVPfQYVx8JeD4QVroEj8i9PngqH3UcsYKVKfN2RHqAQALVQxEpG9Gghpc9Ug2FZYqUpWD8Pj7Pqkfe8a70CFSbuPEY8FLtOkzY-RftcHc51-wrdhbE793kGTyobdsQ3kmiBwYLmnkLrUg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:55:41 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:55:39 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:55:42 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=J-m3JyzJdftwaQa2adfeCM3mWZE9MLnBUx3FpOzN6q-VxX0CWc9rqx9vqCvz7a7hlnKU_86M-vqUVih2YB_IRwf67ohVJwghR-kW_vwYVawkMzyKIOF1P49Fur4EAeonUmUo56pfy6CqeJDr9xaJkQ2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:19 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=6EF8041BEFE59AA722FED28353D788C8F012432DEFDB3465DD9168E49BB5F066D62D6D7DDE66C38EA65E4C0CB9922DA0EE958DE43E3BBAA74432C66351E7D56CC8CF7718687FE356E338A3363FB09E93DB722685608F399CE2B99355109751DF8E76531A3BF48F15827F2A4E3DDC6F62EAD68647D5897A51A117120C096B475DB20FB0DF19EA591723A1C27CB9B257B2; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 06:56:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:20 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=ISsmMTQvbFsD6hvNT4vewg2kXzI2FpcF-VTVqL0_s0J7Whw_H3ty9hqtifsAHRhwlXv_fCmnWVXQqCzj4xrZACuHQoDAnCWdFgh_wW1jKE6hFaSwoU73l6ZD-UteNZ51ndD800gZDUbpbNn41BJeKA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:24 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:25 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:25 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=WuHRj6JPXe92LHEtD5gwv0BUYoATEwvW26B4KIqSXfw1RzzV0H5rxnvfExaKMAZgpMXzyYPWv6JtEsxnziKyx6soYBMSMrS1Qljw5FBuB439d9yjktk7_5CHi4VeNX0T0ws4WFrP8bgy6Dogy95MXw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:27 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:27 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:29 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=1VMFLSaGbi4KMkRpPJy0wvNPJoh5mz1RuBemUJOUXmYRiqhQRCOnexlmdW9PNFPPb1drHTBttKuBjY3-2UE-OdBlKqf39L56ZbO5XtCRf-kK0pM5eOO3_8xLqzRssUW6FdseYyZ5Wib7LPXEhqhTMg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:56:31 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=B7C869EE6B0CEA25B620FFFAC28829038C217AF9C077AE3BFEACE288520D86ADB36F8883991117DF0920687CAA01E5AFC74980F0DF65F6B75E067EA31EADB6D968A911054F59F69BECBB31F872C298105F2F85DF594434E89F0CB6AD463ACAB7CE65A2AF1C62103F929F39F03BCFE47F127CB682F65AEC6AB9CFE232BBE4420912E16832EFFFF6149C80CF4D86470B77; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 06:56:31 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-1c3a87ffefa628b8611163301950220133d23b9a8304&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Wed, 20 Jan 2016 06:56:32 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-1c3a87ffefa628b8611163301950220133d23b9a8304&platform=pc
+Response:
+{'content-length': '7447', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=23omsv45bdbben45dfmuwl45; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 06:57:19 GMT', 'content-type': 'text/html; charset=gb2312'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=YToE012mzCLbkFkshrXYRQaQNb6tLn02uLI0UcuKjsxD46lHEuRnoKk1of3W89poxEibriW5tPPOSsiK6lU4qOBrV26kBNTCIpUfg81g9SMMAFn6X9drsoWbugOZwNDi0iU-5ngegLTdZQFgje-Rxw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:46:56 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:46:57 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:46:57 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=nNvT-FI-k3dtU8nSiRa5Xcvvq1819sT2neeE2h3OF3GHKGpPm3ROabWRAqaWVOhk2xOt3WIw7EdAGvMU27UQ3Jn_5sDR4suk_MScDkfe-R5GNKZH0RpgIxkFoULUSE6G6c5q6z3zHFFpKuyMd42Zkw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:01 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:01 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:03 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=khA_cbKUGu2ZeVNmT6S6kJ-ZrhjDXWaByA8BodGbzETRJr1-2KnDLhcEFjnDoTsUNTQRAPwNlAFD2l9b9oCJ7uUloCAOkwMzfPiCyEFjd58SX-SlSWvPFbDkzVEQk-VCx8TXI7RSk1Oo1ySQvkUbgw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:05 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:05 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:06 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=OtGfUStlLsy8sk-IlOSVRSfkwltC-4y5jnvBUs4jQD0q7G2HpVlte08BzqTWyIVNyBrVatNyNCfl_XGOoO9NaIowq4c4gULsbq2m6L1KWTZ0xX7aOMJjxqaJW6s_DCC1qYX3igvukGzrKlr9iMwOmg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:08 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:10 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:09 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=jfZR0Kom-uybjs7-5aae1rq3asvFV4bnLswr-SGeMuwuSRPvQHPAcg39iSTBU0NOTY-HqMGynNtrqkVHmwQvQ-S-osoH-hWNxiujudacnoYk3J8NId5mzf8nxABVdNl-KzBnaTwNJ0EA9Or5o_u89w2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:18 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:17 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:19 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=PZ3Pfr6A3iSGib9xZKgwRcSj7PE3QeWVv79OaRZRu-ML302_mkVkm5nKe-7aRnk3USc-xQCtw5KmReSRU-FPBwoE4vA1TezTpzJqP_Mxv9qIs5Kibq73qt3gpjLUXGqj3d2L8QWRL6EY_eyXc_T_dQ2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:44 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:45 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:45 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=OWRZ0PSrvO3LoXa6LrN-rdhkIvXOskUH9YexzQhkngl0uzBQhdjDAFfCFNqtdbIqs12J8hZS_HHf0cYn-8x2Sg8heKKsGI1lXLG87rlOBO6OUo1FE5t1dLzJy0f7aOH-NNMcIk7VhS2uwshb7cU59Q2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:50 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:49 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:47:50 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=-kjWQlq3YkssKliXr57AG6wD3wOzQqfv_Xybtw0vGzzIC97KolvuuvZV6VPVfYVLkqobkMylOckTuxn4kuBkX8gY64Eu7z6POYl3s9K6_eK-hhY_EboolBbG3l2qbsLdWDX8YtxOre0SUrn9-5yGIw2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:36 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:36 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:37 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=ZiiU5zkH-0YoSb48SXTtp1jefEkTgk2F5jJFEX6ig5pKkK5XI-8KdGVW_P0tPbqqh0Eub6nw-htVOhxYZWHtWz__x4HY6Qf3PIheEMJpxjSoC33ClqpSVRsUsZy34OTD_wOKzHvBULswRy6Xqro6hA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:40 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=D0773F0E8208FC280CE7F9D6EB05F8D30C1E24FCC94D63709D56DDF4F6AA404837522F39CE29DE7C6B41F784D6EEE2069C92D62318C3D4C981A89E2D1D23B0604B1478255D8E1764D50A1716F254B5D77597B449211CBAEC588E9232029B68E444DF215A84E692C901642D4C1DA774C862158CDFB601BC3368F36C506FB7D147919D067474456C98A442D63E936E7FF2; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 07:50:40 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:40 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=dfOIb6utefUZG99qibSaPB9RZR0bQAgihYNSwtwRwQLsN2l5oGaU52Pbdj6JXTy-Awg9HauCwFxXHdfNJKbQKi0WAAB-HVEMpqgbwtBOARXZ4tuYW4CA7NRDCTIWFvTrN_gQnByDGGUfezgVsxRN0Q2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:43 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:44 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:50:44 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=QNSiHTu0zALjlrKxyb-x02Zlgu_i32md7EJeZgWJMJ35tRhkjzH_1_AnuYic1UJvc4KAMpUtuSu-KB2fSnXi78EpqmbH677mxWRdk2KvGOP-eFPqzgnLOGa4RrKXS5V7-1JgQDWWflqeuYo5Yq5bzA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:51:30 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=F21D3DFF25B977702E64603A60F1A378C858379CF53D097CAC70FECAA40DD499DB680287D7716CB5EED167E58012A68F09CE3F0FC15B9BEF53759F17B4D7B476ECF479E1D26B5BA378FCF9DB80887858EB9ECF5EF0EBA6B480F286E9DCB48060A94633D65F73E28AA7639ED88C7E7E5007390BB802D9BAF56801A3BED705F621580E3392CFAAE0E8C824ECAEF57935D6; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 07:51:30 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-e59f87001e84f0b042bf7b252c32dceabde3211b3291&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Wed, 20 Jan 2016 07:51:32 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-c-e59f87001e84f0b042bf7b252c32dceabde3211b3291&platform=pc
+Response:
+{'content-length': '7447', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=hvkatfapyfejq3fwwihzkrvg; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 07:52:21 GMT', 'content-type': 'text/html; charset=gb2312'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=aY6dTUh--X9-zfjRv055N--hwCPEaLUbqh2T-_Ed66wMJsK8lKc1nBUZcAJkgGcPrVHZoGVn_hdwBJI6VTzUMEjeeUlHG53T7gaXDVT3Ctqpe1eikBLWxRbNUxmgEhPitTV8xwrvdNijlhutAPZ03w2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:29:40 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:29:40 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:29:42 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=d1R8bxYpYTx8lAR5ggfPvxB_2_jVIuMcPpigj7kdic2U7f7QAuw__TPHv-xn9VkQsd7jgkx4g6DWaCzxVjDCOPR7oW6tTfm7X1Y7EMc2FwdCyM3SxkE0cKkVOrncGzoHgaf9scHk3yhloEyTTMlU3g2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:37:32 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:37:33 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:37:33 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=hjBJolEcaV8-zurrGUyiCQGAh_15p4Ii7mhgaMmjoY8JM3xshDvhLhwcQaetLbUqZc2LSu9UXF0If9Bf5uGGlLfpA2w7hOOdhk2qLJffElXu_54CPkc4Vh675fEKCxKh3gyySeamO32QRn4V0Otstg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:39:11 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:39:12 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:39:13 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=ts-4_kOkaXMTqJo8CDl7yheKTKDBoL9SQ2fNMlMh0EY76ARn8w5dTyKfaaGVg0Li33c_Y8YY8HV4cJrBWkqBH0bkyPHSd1ZnN-cwENKvXBqR5jUOQb21_LX8u1yXMlXgR5TA9aok8Rv75yfF8V14Fg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:39:57 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=C830B63F276F3A473C957E04FCDD16AC0586A558D99F1F406E8E97B9D49D2C78C17E0C3CD8AD2526D4CC0DA844BCCC01F11A36338205AF7DAB453E38AD26A16DDC44A7B1C704692A982511F3CDF461FA6A31D42138A6696447E312BE76210AB943B5258DEF1BF4E3CFB0BD5F3AB8DF1877A4CB8E06DBD7151BE3C1D17C81B786474F9AE9C0C62DEEA8625B9764F277BE; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 08:39:57 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-c7daef11fdab3480669c6a6f30f290009712114c8848&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Wed, 20 Jan 2016 08:39:59 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-c7daef11fdab3480669c6a6f30f290009712114c8848&platform=pc
+Response:
+{'content-length': '7447', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=qfnof2munmovxx45bqmz0545; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 08:39:38 GMT', 'content-type': 'text/html; charset=gb2312'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=mSR_Avw9JpChGH6llWAqR8BfR6cEug_1JsvxAv0MokYRMq2UDSnc49zB5AlZSskBWLla3wVGmVwhhEExTLxyjW3UcjSdWKU44vYKhl3Nl6Ci-a09G-cItahmCSftHIHwICFANHuC5u-WoeY9EZWvjA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 12:38:36 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=WyhF6DPwgxX3P8KqY4d8hfAIzH0EYNlEwA6xWoYQ1ovsYsUq0mGtWYQc8wajJVP29X5kYfG9B9cLFEx-fLp2pg6q2Y6TcQmBE33SICt10hkiyMxhBTZE3hnsRUUPN3eyn3RNwSGuJtFRzop5YUVjYg2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 12:49:01 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '10144', 'x-powered-by': 'ASP.NET', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 12:49:01 GMT', 'content-type': 'text/html; charset=utf-8'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '172', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 12:49:03 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=aNnK1XNLlVMpO7blwz_HSfo8XXOAJfh61QWDqJwhGRPQXNWw91X9QbvORmXvQHDjOfdRuQc4EIvepYY5VyDZdMUQ3ZlyIPHva0CZpLk_rBkIiCVRLV8oX-VONwPSj8J749b61F840LRBAlEVDZT8HA2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 13:03:23 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=3CE94D2BD9B6418ADA93527A2847974E4C3258161BA10BB30EDC4E657208E2C2894894C163D40D2A848D3F048EBAC631D3006DACE71873A47E1BCF8B73A3C37B53F3EE1D5DBD21D2AD2A0FAD7BAE426CC01FE4D4427F8CC47FB311DB87CF00A6218FCF4EBDFE52FA2499CD0EA0CB5F0D544BE5267837B44DD23BBA6A0DA86C0B8CCA66AB72EC0C2926693BDF5B0C4AE7; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Wed, 20 Jan 2016 13:03:24 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-7f5958300467a4508b0f870b2c2ef662b40d30342191&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Wed, 20 Jan 2016 13:03:24 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-7f5958300467a4508b0f870b2c2ef662b40d30342191&platform=pc
+Response:
+{'content-length': '7531', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=myxggk55jefjnyiju4aplwur; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Wed, 20 Jan 2016 13:03:28 GMT', 'content-type': 'text/html; charset=gb2312'}
+
+step_1
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '3873', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'set-cookie': '__RequestVerificationToken=14gQcyD-l8lIrwp70axSqe-NZtjSAKn5wHQmqqe6U0QkNHPIeOVk-UbStNulooMbOQbOge_0HcBabjh7GE3TX_c44-3pt4qF7T8Yoipg4fsyQXzyV4W5YRVRTSxtBuQIKnWYRZeHjGlSWVbo1ATZyQ2; path=/; HttpOnly', 'x-aspnet-version': '4.0.30319', 'server': 'Microsoft-IIS/7.5', 'cache-control': 'private', 'date': 'Thu, 21 Jan 2016 02:06:23 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_2
+Request:
+https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&appid=jwxt
+Response:
+{'content-length': '129', 'content-type': 'text/html; charset=utf-8', 'x-aspnet-version': '4.0.30319', 'set-cookie': '.ASPXAUTH=EBA94298489024EE2034A1C680954A36C8260A969E8D46333686A1576D6801777133D078EE6DBF4818617DFAB04181D7528B7B2D2776E20FB614C87817088C59C77A2EE68E036060A03CBE5DEC664E0388A76E5821AC19EF82AB7865B76A283EEF6369A625C18AD6226209EF5019F8E25546492143F3A56AEB17777C8D041F8F679921706F17791BA1B34AE661AC13FB; path=/; HttpOnly', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': '/?appid=jwxt', 'cache-control': 'private, no-cache="Set-Cookie"', 'date': 'Thu, 21 Jan 2016 02:06:26 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_3
+Request:
+https://cas.dgut.edu.cn/?appid=jwxt
+Response:
+{'content-length': '234', 'x-aspnet-version': '4.0.30319', 'content-type': 'text/html; charset=utf-8', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/7.5', 'location': 'http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-ea51b01e6d111d35072c668e1b9183ac1e6386f12512&platform=pc', 'cache-control': 'private, s-maxage=0', 'date': 'Thu, 21 Jan 2016 02:06:26 GMT', 'x-aspnetmvc-version': '4.0'}
+
+step_4
+Request:
+http://jwxt.dgut.edu.cn/jwweb/cas_dglg.aspx?token=jwxt-b-ea51b01e6d111d35072c668e1b9183ac1e6386f12512&platform=pc
+Response:
+{'content-length': '7531', 'x-aspnet-version': '1.1.4322', 'set-cookie': 'ASP.NET_SessionId=uo30ck55zd1pykfxfbofve45; path=/', 'x-powered-by': 'ASP.NET', 'server': 'Microsoft-IIS/6.0', 'cache-control': 'private', 'date': 'Thu, 21 Jan 2016 02:07:16 GMT', 'content-type': 'text/html; charset=gb2312'}
