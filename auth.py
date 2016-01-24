@@ -1,7 +1,10 @@
 # _*_ coding:utf-8 _*_
 
 from bs4 import BeautifulSoup
+from PIL import Image
+from StringIO import StringIO
 import requests
+import urlparse
 import logging
 import time
 import useragent
@@ -59,6 +62,22 @@ def save_html(response, filename):
     with open(filename, "wb") as html:
         html.write(response.content)
     return None
+
+
+def vertical_merge(img_top, img_bottom):
+    u"""合并两个宽度相同的图像,垂直的方式
+    img_top = StringIO(res.content)
+    41pixel
+    """
+    top = Image.open(img_top)
+    bottom = Image.open(img_bottom)
+    width = top.width
+    height = top.height + bottom.height - 41
+    new_img = Image.new("RGB", (width, height))
+    new_img.paste(top, (0, 0))
+    crop = bottom.crop((0, 41, bottom.width, bottom.height))
+    new_img.paste(crop, (0, top.height))
+    return new_img
 
 urls = {"login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login",
         "check_login": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=check_login",
@@ -151,7 +170,7 @@ class JWCAuth(object):
             step_4.url, step_4.headers))
         save_html(step_4, "step_4.html")
         self.auth_cookie = step_4.cookies
-        self.auth.headers.update(step_4.cookies)
+        #self.auth.headers.update(step_4.cookies)
         return None
 
     def never_give_up(self):
@@ -173,14 +192,67 @@ class JWCAuth(object):
         return res
 
     def get_score(self):
-        form_data = {}
-        post = requests.get(urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx",
-                            cookies=self.auth_cookie,
-                            headers=_header("application/x-www-form-urlencoded",
-                                            Host=urls[jwxt][7:],
-                                            Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx",),
-                            )
+        # get txt_xm
+        step_1 = requests.get(urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx",
+                              headers=_header(Host=urls["jwxt"][7:],
+                                              Referer=urls["jwxt"] + "/jwweb/sys/menu.aspx"),
+                              cookies=self.auth_cookie)
+        save_html(step_1, "get_score_step_1.html")
 
+        soup_1 = BeautifulSoup(step_1.text, 'lxml')
+        txt_xm = soup_1.find_all(attrs={"name": "txt_xm"})[0]["value"]
+        form_data = {"txt_xm": txt_xm,
+                     "btn_search": "%BC%EC%CB%F7",
+                     "SJ": "0",  # 0： 原始成绩 1：有效成绩
+                     "SelXNXQ": "0",  # 0:入学以来 1：学年 2：学期
+                     "zfx_flag": "0"  # 0：主修 1：辅修
+            }
+        post = requests.post(urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx",
+                            cookies=self.auth_cookie,
+                            headers=_header(Host=urls["jwxt"][7:],
+                                            Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx"),
+                            data=form_data
+                            )
+        # 解析URL
+        soup = BeautifulSoup(post.text, 'lxml')
+        imgs = soup.find_all("img")
+        # (xnxq, (filename, src, src))
+        imgs_info = []
+        for img in imgs:
+            url = img["src"]
+            # 20141:2014-2015学年第二学期 20140第一学期
+            xnxq = urlparse.parse_qs(url.split("?")[1], True)["xnxq"][0]
+            if xnxq in imgs_info:
+                index = imgs_info.index(xnxq) + 1
+                imgs_info[index].append(url)
+            else:
+                xn, xq = int(xnxq[:4]), int(xnxq[4:])
+                filename = u"{}-{}学年第{}学期.png".format(xn, xn + 1, xq+1)
+                imgs_info.append(xnxq)
+                imgs_info.append([filename, url])
+        for index in xrange(1, len(imgs_info), 2):
+            img_info = imgs_info[index]
+            filename = img_info[0]
+            if len(img_info) > 2:
+                #
+                def get_img(url):
+                    res = requests.get(urls["jwxt"] + "/jwweb/xscj/" + url,
+                                headers=_header(Host=urls["jwxt"][7:],
+                                                Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
+                                cookies=self.auth_cookie)
+                    return res.content
+                contents = [get_img(url) for url in img_info[1:]]
+                imgfile = vertical_merge(*[StringIO(content) for content in contents])
+                imgfile.save(filename, format="png")
+            else:
+                url = img_info[1]
+                res = requests.get(urls["jwxt"] + "/jwweb/xscj/" + url,
+                                headers=_header(Host=urls["jwxt"][7:],
+                                                Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
+                                cookies=self.auth_cookie)
+                imgfile = Image.open(StringIO(res.content))
+                imgfile.save(filename, format="png")
+        return None
 
 class TYXKAuth(object):
     """docstring for TyxkAuth"""

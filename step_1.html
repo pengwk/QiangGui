@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>东莞理工学院中央认证系统</title>
+    <link href="/Content/cas.css" rel="stylesheet" />
+    <link href="/Content/themes/custom-theme/jquery-ui-1.10.4.custom.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main">
+        <div class="top">
+        </div>
+        <div class="notice">
+            <p class="title"><span style="color:#5794c7">特别提醒：</span>为了保护您的隐私，请在访问结束后务必<span style="color:red">关闭</span>所有浏览器窗口退出。</p>
+            <p class="text">这是学校的中央认证系统登陆页面，以后会有更多的网络应用集成这新的中央认证系统。请务必谨记东莞理工学院中央认证系统的官方域名<span style="color:red">“https://cas.dgut.edu.cn”</span>与<span style="color:red">官方微信</span>，慎防<a href="http://baike.baidu.com/view/64418.htm" target="_blank">钓鱼网站</a>和虚假微信号窃取您的账号和密码信息。</p>
+        </div>
+        <div class="form">
+            <div class="ajax_form">
+<form action="/User/Login?ReturnUrl=%2F%3Fappid%3Djwxt&amp;appid=jwxt" method="post"><input name="__RequestVerificationToken" type="hidden" value="ZCusM0jJd3sDrPF-GPlvlVT6eI1HjeO5u-vqG2J2dckm9Xdl7_MtgVb2Mt912PIreba18T3ol11Xp1huW5UGFJvimsBYBh6Wj87R-k1xfbkft4EXMLlevJVP7nthYWuahHm9FhpLopTik7IHW5BTm9CPDcQwPGRNe8k57SljjL81" /><input id="ReturnUrl" name="ReturnUrl" type="hidden" value="/?appid=jwxt" />                    <label>用户名</label>
+<input class="username" id="UserName" name="UserName" type="text" value="" />                     &nbsp;
+                    <label>密码</label>
+<input class="password" id="Password" name="Password" type="password" />                     &nbsp;
+                    <input type="submit" class="btn" value="" />
+</form>            </div>
+        </div>
+        <div class="foot">
+            版权所有：<a href="http://nic.dgut.edu.cn/" target="_blank">网络与教育技术中心</a>&nbsp;&nbsp;2014年4月</>&nbsp; 
+             &nbsp;<a id="change" href="/user/changepwd" target="_blank">修改密码</a>&nbsp;&nbsp;&nbsp;<a
+             href="/Help" target="_blank">帮助</a>&nbsp;&nbsp;&nbsp;<a
+             href="/Help/Reg" target="_blank">校友注册</a>
+        </div>
+    </div>
+    <div id="dialog-message" title="提示信息：">
+        <div id="msg"></div>
+    </div>
+    <script type="text/javascript" src="/Scripts/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.8.24.min.js"></script>
+    <script type="text/javascript" src="/Scripts/my.js"></script>
+    <script type="text/javascript">
+        var msg = $("#msg").text();
+        if (msg.length > 5) {
+            if (msg.substring(0, 2) == "抱歉")
+            {
+                $("#dialog-message").dialog({
+                    width: 500,
+                    modal: true,
+                    buttons: {
+                        修改密码: function () {
+                            window.open('/user/changepwd');
+                        }, 关闭: function () {
+                            $(this).dialog("close");
+                            $("#Password").focus();
+                        }
+                    }
+                });
+            }
+            else {
+                $("#dialog-message").dialog({
+                    width: 500,
+                    modal: true,
+                    buttons: {
+                        关闭: function () {
+                            $(this).dialog("close");
+                            $("#Password").focus();
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

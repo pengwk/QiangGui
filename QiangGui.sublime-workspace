@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"get_score"
+			],
+			[
+				"save",
+				"save_html"
+			],
+			[
+				"url",
+				"urls"
+			],
+			[
+				"auth",
+				"auth_cookie"
+			],
+			[
+				"jwxt_",
+				"jwxt_host"
+			],
+			[
 				"cas",
 				"cas_host"
 			],
@@ -222,10 +242,6 @@
 			[
 				"Panel",
 				"Panel"
-			],
-			[
-				"get",
-				"get_user_info"
 			],
 			[
 				"ca",
@@ -483,7 +499,7 @@
 			"file": "auth.py",
 			"settings":
 			{
-				"buffer_size": 8319,
+				"buffer_size": 13827,
 				"line_ending": "Windows"
 			}
 		},
@@ -491,8 +507,20 @@
 			"file": "笔记.md",
 			"settings":
 			{
-				"buffer_size": 4846,
+				"buffer_size": 12354,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<html xmlns:v=\"urn:schemas-microsoft-com:vml\">\n<head>\n	<meta http-equiv='Content-Type' content='text/html; charset=gb2312' >\n	<link rel='stylesheet' href='../_style/styles_rpt.css' type='text/css'>\n	<style>v\\:* {BEHAVIOR:url(#default#VML)}@media print{div.buttonarea {display:none}}</style>\n	<title></title>\n</head>\n<body oncontextmenu=window.event.returnValue=false ondragstart=window.event.returnValue=false onsource=window.event.returnValue=false topmargin='0' leftmargin='0'>\n	<center>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0 >\n			<tr>\n				<td align=center style='font-weight:bold;text-align:center;font-size:16pt' colspan='12'>东莞理工学院学生成绩明细(有效)</td>\n			</tr>\n			<tr align=left valign=middle >\n				<td align=center colspan='12'>\n					<br></td>\n			</tr>\n		</table>\n		<table name=theExportData width=803>\n			<tr>\n				<td align=left colspan='2'>院(系)/部：电子工程学院</td>\n				<td align=left colspan='10'>行政班级：2014通信6班</td>\n			</tr>\n			<tr>\n				<td align=left colspan='2'>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：201441302623</td>\n				<td align=left colspan='3'>姓&nbsp;&nbsp;&nbsp;&nbsp;名：彭未康</td>\n				<td align=right colspan='7'>打印时间：2016-01-22</td>\n			</tr>\n		</table>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0>\n			<tr>\n				<td align=left>学年学期：2014-2015学年第一学期</td>\n			</tr>\n		</table>\n		<div style='text-align:center;width:803'>\n			<div style='width;100%;text-align:center'>\n				<img width='803' src='Stu_MyScore_Drawimg.aspx?x=1&h=2&w=803&xnxq=20140&xn=&xq=&rpt=1&rad=0&zfx=0'></div>\n		</div>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0>\n			<tr>\n				<td align=left>学年学期：2014-2015学年第二学期</td>\n			</tr>\n		</table>\n		<div style='text-align:center;width:803'>\n			<div style='width;100%;text-align:center'>\n				<img width='803' src='Stu_MyScore_Drawimg.aspx?x=1&h=15&w=803&xnxq=20141&xn=&xq=&rpt=1&rad=0&zfx=0'></div>\n		</div>\n		<table name=theExportData width='803'  border=0 align=center CELLPADDING=0 CELLSPACING=0  valign=bottom >\n			<tr align=center>\n				<td width=100% align=center class='noborder'>\n					<table border=0 align=center CELLPADDING=0 CELLSPACING=0  >\n						<tr>\n							<td align=right colspan=7>第&nbsp;1&nbsp;页&nbsp;&nbsp;</td>\n							<td align=left colspan=7 id='page1'>共&nbsp;1&nbsp;页</td>\n						</tr>\n					</table>\n				</td>\n			</tr>\n		</table>\n		<br>\n		<div class='newPage'></div>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0 >\n			<tr>\n				<td align=center style='font-weight:bold;text-align:center;font-size:16pt' colspan='12'>东莞理工学院学生成绩明细(有效)</td>\n			</tr>\n			<tr align=left valign=middle >\n				<td align=center colspan='12'>\n					<br></td>\n			</tr>\n		</table>\n		<table name=theExportData width=803>\n			<tr>\n				<td align=left colspan='2'>院(系)/部：电子工程学院</td>\n				<td align=left colspan='10'>行政班级：2014通信6班</td>\n			</tr>\n			<tr>\n				<td align=left colspan='2'>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：201441302623</td>\n				<td align=left colspan='3'>姓&nbsp;&nbsp;&nbsp;&nbsp;名：彭未康</td>\n				<td align=right colspan='7'>打印时间：2016-01-22</td>\n			</tr>\n		</table>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0>\n			<tr>\n				<td align=left>学年学期：2014-2015学年第二学期</td>\n			</tr>\n		</table>\n		<div style='text-align:center;width:803'>\n			<div style='width;100%;text-align:center'>\n				<img width='803' src='Stu_MyScore_Drawimg.aspx?x=7&h=2&w=803&xnxq=20141&xn=&xq=&rpt=1&rad=0&zfx=0'></div>\n		</div>\n		<table name=theExportData width=803 BORDER=0 align=center CELLPADDING=0 CELLSPACING=0>\n			<tr>\n				<td align=left>学年学期：2015-2016学年第一学期</td>\n			</tr>\n		</table>\n		<div style='text-align:center;width:803'>\n			<div style='width;100%;text-align:center'>\n				<img width='803' src='Stu_MyScore_Drawimg.aspx?x=1&h=7&w=803&xnxq=20150&xn=&xq=&rpt=1&rad=0&zfx=0'></div>\n		</div>\n		<table name=theExportData width='803'  border=0 align=center CELLPADDING=0 CELLSPACING=0  valign=bottom >\n			<tr align=center>\n				<td width=100% align=center class='noborder'>\n					<table border=0 align=center CELLPADDING=0 CELLSPACING=0  >\n						<tr>\n							<td align=right colspan=7>第&nbsp;2&nbsp;页&nbsp;&nbsp;</td>\n							<td align=left colspan=7 id='page2'>共&nbsp;2&nbsp;页</td>\n						</tr>\n					</table>\n				</td>\n			</tr>\n		</table>\n		<script type=\"text/javascript\">document.getElementById(\"page1\").innerHTML=\"共&nbsp;2&nbsp;页\";document.getElementById(\"page2\").innerHTML=\"共&nbsp;2&nbsp;页\";</script>\n	</form>\n</center>\n</body>\n</html>\n<script language=javascript>\nfunction adddata(obj)\n{	\n	if(obj.checked)\n	{\n		if($(\"xfj\").innerHTML == \"\" && $(\"kcms\").innerHTML == \"\")\n		{\n			$(\"zxf\").value = Math.round(parseFloat(obj.zxf) * 10) / 10;\n			$(\"xfj\").innerHTML = Math.round(parseFloat(obj.xfj) * 10) / 10;\n		}\n		else\n		{\n			$(\"zxf\").value = Math.round((parseFloat($(\"zxf\").value) + parseFloat(obj.zxf)) * 10) / 10;\n			$(\"xfj\").innerHTML = Math.round((parseFloat($(\"xfj\").innerHTML) + parseFloat(obj.xfj)) * 10) / 10;\n		}		\n	}\n	else\n	{\n		$(\"zxf\").value = Math.round((parseFloat($(\"zxf\").value) - parseFloat(obj.zxf)) * 10) / 10;\n		$(\"xfj\").innerHTML = Math.round((parseFloat($(\"xfj\").innerHTML) - parseFloat(obj.xfj)) * 10) / 10;\n	}\n	\n	if($(\"zxf\").value != \"0\")\n	{\n		$(\"pjxfj\").innerHTML = Math.round(parseFloat($(\"xfj\").innerHTML) / $(\"zxf\").value * 100) / 100;\n	}\n	else\n	{\n		$(\"xfj\").innerHTML = \"0\";\n		$(\"pjxfj\").innerHTML = \"0\";\n	}\n}\n\nfunction $(theID)\n{\n	return parent.document.getElementById(theID);\n}\n\n</script>",
+			"file": "all.htm",
+			"file_size": 5799,
+			"file_write_time": 130980953508032766,
+			"settings":
+			{
+				"buffer_size": 5497,
+				"line_ending": "Windows",
+				"scratch": true
 			}
 		},
 		{
@@ -651,10 +679,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "pep",
+		"height": 265.0,
+		"last_filter": "html",
 		"selected_items":
 		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
 			[
 				"pep",
 				"User: Python PEP8 Autoformat"
@@ -710,10 +742,6 @@
 			[
 				"emmet",
 				"Emmet: Balance (inward)"
-			],
-			[
-				"html",
-				"Set Syntax: HTML"
 			],
 			[
 				"align",
@@ -877,10 +905,16 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/wk/OneDrive/W/QiangGui"
+		"/C/Users/wk/OneDrive/W/QiangGui",
+		"/C/Users/wk/OneDrive/W/QiangGui/ps"
 	],
 	"file_history":
 	[
+		"/C/Users/wk/OneDrive/W/QiangGui/get_score_step_1.html",
+		"/C/Users/wk/login.py",
+		"/C/Users/wk/getdata.py",
+		"/C/ws/code/fasong.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/all.html",
 		"/C/Users/wk/OneDrive/W/QiangGui/useragent.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/jwc_auth.py",
 		"/C/Users/wk/Downloads/Sample file.csv",
@@ -1003,12 +1037,7 @@
 		"//RASPBERRYPI/quanbu/var/log/nginx/error.log",
 		"//RASPBERRYPI/quanbu/var/log/messages",
 		"//RASPBERRYPI/quanbu/var/log/faillog",
-		"//RASPBERRYPI/quanbu/var/log/mail.log",
-		"//RASPBERRYPI/quanbu/var/log/minidlna.log",
-		"//RASPBERRYPI/quanbu/var/log/regen_ssh_keys.log",
-		"//RASPBERRYPI/quanbu/var/log/wtmp",
-		"//RASPBERRYPI/quanbu/var/log/user.log",
-		"//RASPBERRYPI/quanbu/var/log/debug.1"
+		"//RASPBERRYPI/quanbu/var/log/mail.log"
 	],
 	"find":
 	{
@@ -1108,10 +1137,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 800.0,
+						"translation.y": 778.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1139,7 +1168,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 576.0,
+						"translation.y": 558.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
@@ -1158,8 +1187,8 @@
 						"selection":
 						[
 							[
-								152,
-								108
+								741,
+								741
 							]
 						],
 						"settings":
@@ -1170,10 +1199,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 93.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1182,15 +1211,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8319,
+						"buffer_size": 13827,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4528,
-								4528
+								9451,
+								9451
 							]
 						],
 						"settings":
@@ -1201,7 +1230,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3264.0,
+						"translation.y": 7378.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1213,7 +1242,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4846,
+						"buffer_size": 12354,
 						"regions":
 						{
 							"TagLint":
@@ -1233,8 +1262,8 @@
 						"selection":
 						[
 							[
-								4751,
-								4751
+								6942,
+								6942
 							]
 						],
 						"settings":
@@ -1246,7 +1275,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 10073.0,
+						"translation.y": 14472.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1254,6 +1283,51 @@
 				},
 				{
 					"buffer": 5,
+					"file": "all.htm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5497,
+						"regions":
+						{
+							"TagLint":
+							{
+								"flags": 2356,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										4489,
+										4493
+									]
+								],
+								"scope": "variable.parameter"
+							}
+						},
+						"selection":
+						[
+							[
+								1223,
+								1223
+							]
+						],
+						"settings":
+						{
+							"in_converting": true,
+							"is_xml": false,
+							"origin_encoding": "GB2312",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 434.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "/C/Users/wk/OneDrive/W/wxpython/mycode/flow.py",
 					"semi_transient": false,
 					"settings":
@@ -1280,11 +1354,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "LoginDialog.py",
 					"semi_transient": false,
 					"settings":
@@ -1311,11 +1385,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "dialog.py",
 					"semi_transient": false,
 					"settings":
@@ -1327,8 +1401,8 @@
 						"selection":
 						[
 							[
-								784,
-								784
+								416,
+								416
 							]
 						],
 						"settings":
@@ -1342,7 +1416,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1381,7 +1455,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 135.0
+		"height": 74.0
 	},
 	"output.find_results":
 	{
