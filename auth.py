@@ -339,3 +339,17 @@ class TYXKAuth(object):
 
     def logout(self):
         pass
+
+class NICZY(object):
+    u"""学校媒体资源网客户端
+    http://niczy.dgut.edu.cn
+    """
+    def __init__(self, arg):
+        super(NICZY, self).__init__()
+        self.arg = arg
+    
+    def login(self):
+        pass
+
+    def logout(self):
+        pass
