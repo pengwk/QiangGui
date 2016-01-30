@@ -2,6 +2,7 @@
 import os
 
 import wx
+import wx.lib.inspection
 
 img_dir = "C:\\Users\\wk\\OneDrive\\W\\QiangGui\\img"
 
@@ -11,33 +12,37 @@ class SelectPanel(wx.Toolbook):
     def __init__(self, parent, id):
         super(SelectPanel, self).__init__(parent, id, style=wx.BK_BOTTOM)
 
+        # ImageList
+        imagelist = wx.ImageList(75, 75)
+        index_1 = imagelist.Add(wx.Image(os.path.join(img_dir, u"足球.jpg")).ConvertToBitmap())
+        index_2 = imagelist.Add(wx.Image(os.path.join(img_dir, u"篮球.jpg")).ConvertToBitmap())
+        index_3 = imagelist.Add(wx.Image(os.path.join(img_dir, u"瑜伽.jpg")).ConvertToBitmap())
+        
+        self.AssignImageList(imagelist)
         # 时间
-        img_path = os.path.join(img_dir, u"足球.jpg")
-        img = wx.Image(img_path)
         panel = TimePanel(self, wx.ID_ANY, None)
-        self.AddPage(panel, u"时间", imageId=img)
+        self.AddPage(panel, u"时间", imageId=index_1)
 
         # 课程
-        img_path = os.path.join(img_dir, u"篮球.jpg")
-        img = wx.Image(img_path)
         panel = CoursePanel(self, wx.ID_ANY, None)
-        self.AddPage(panel, u"项目", imageId=img)
+        self.AddPage(panel, u"项目", imageId=index_2)
 
         # 老师
-        img_path = os.path.join(img_dir, u"瑜伽.jpg")
-        img = wx.Image(img_path)
         panel = TeacherPanel(self, wx.ID_ANY, None)
-        self.AddPage(panel, u"老师", imageId=img)
+        self.AddPage(panel, u"老师", imageId=index_3)
+
+        # 间隔
+        
 
         # 事件绑定
         self.Bind(wx.EVT_TOOLBOOK_PAGE_CHANGED, self.OnPageChanged)
         self.Bind(wx.EVT_TOOLBOOK_PAGE_CHANGING, self.OnPageChanging)
 
-        def OnPageChanged(self, event):
-            pass
+    def OnPageChanged(self, event):
+        pass
 
-        def OnPageChanging(self, event):
-            pass
+    def OnPageChanging(self, event):
+        pass
 
 class TimePanel(wx.Panel):
     u"""时间选择
@@ -82,6 +87,7 @@ class MyApp(wx.App):
         size = self.frame.GetBestSize()
         self.frame.SetSize(size)
         self.SetTopWindow(self.frame)
+        wx.lib.inspection.InspectionTool().Show()
         self.frame.Show()
         return True
 

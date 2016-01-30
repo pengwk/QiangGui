@@ -496,18 +496,18 @@
 			}
 		},
 		{
-			"file": "gui_code/new_design.py",
+			"file": "gui_code/wx笔记.md",
 			"settings":
 			{
-				"buffer_size": 1287,
+				"buffer_size": 5500,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "笔记.md",
+			"file": "gui_code/new_design.py",
 			"settings":
 			{
-				"buffer_size": 12396,
+				"buffer_size": 2659,
 				"line_ending": "Windows"
 			}
 		}
@@ -643,10 +643,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 242.0,
-		"last_filter": "pyton",
+		"height": 334.0,
+		"last_filter": "color",
 		"selected_items":
 		[
+			[
+				"color",
+				"Color Picker"
+			],
 			[
 				"pyton",
 				"Set Syntax: Python"
@@ -874,10 +878,15 @@
 	"expanded_folders":
 	[
 		"/C/Users/wk/OneDrive/W/QiangGui",
+		"/C/Users/wk/OneDrive/W/QiangGui/gui_code",
 		"/C/Users/wk/OneDrive/W/QiangGui/ps"
 	],
 	"file_history":
 	[
+		"/C/Users/wk/OneDrive/W/QiangGui/.gitignore",
+		"/C/Users/wk/OneDrive/W/QiangGui/笔记.md",
+		"/C/Program Files/wxPython3.0 Docs and Demos/demo/Main.py",
+		"/C/Python27/lib/site-packages/wx-3.0-msw/wx/_core.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/data_gen.py",
 		"/C/Users/wk/OneDrive/W/miscellaneous/willpower_split.py",
 		"/C/ws/.gitconfig",
@@ -910,7 +919,6 @@
 		"/C/Users/wk/OneDrive/W/wxpython/字符串和编码.md",
 		"/C/Users/wk/OneDrive/W/pengwk.com/git-server/git-server.md",
 		"/C/Users/wk/OneDrive/W/QiangGui/PayImage.py",
-		"/C/Users/wk/OneDrive/W/QiangGui/.gitignore",
 		"/C/Users/wk/OneDrive/W/wxpython/.gitignore",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/try.log",
 		"/C/Users/wk/AppData/Local/Temp/Rar$DIb0.884/USE PASSWORD - 12345.txt",
@@ -1002,10 +1010,7 @@
 		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
 		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Installed Packages/Markdown Preview.sublime-package",
 		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
-		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/MultiMarkdown.sublime-settings",
-		"/C/Users/wk/Desktop/code/myproject/login.py",
-		"/C/Program Files/OpenVPN/doc/INSTALL-win32.txt",
-		"/C/Users/wk/AppData/Local/Temp/is-J0IG1.tmp/license.txt"
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/MultiMarkdown.sublime-settings"
 	],
 	"find":
 	{
@@ -1023,6 +1028,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"时获得。",
+			">\n",
+			"type的值",
+			"以指定像素为单位，进行模糊处理",
+			"image",
+			" \n",
 			"Center",
 			"pengwk",
 			"page",
@@ -1079,7 +1090,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1126,8 +1137,8 @@
 						"selection":
 						[
 							[
-								17683,
-								17683
+								19155,
+								19155
 							]
 						],
 						"settings":
@@ -1138,7 +1149,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12671.0,
+						"translation.y": 12154.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1146,40 +1157,11 @@
 				},
 				{
 					"buffer": 2,
-					"file": "gui_code/new_design.py",
+					"file": "gui_code/wx笔记.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "笔记.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12396,
+						"buffer_size": 5500,
 						"regions":
 						{
 							"TagLint":
@@ -1189,8 +1171,8 @@
 								"regions":
 								[
 									[
-										950,
-										954
+										5495,
+										5498
 									]
 								],
 								"scope": "variable.parameter"
@@ -1199,23 +1181,60 @@
 						"selection":
 						[
 							[
-								12223,
-								12223
+								557,
+								557
+							],
+							[
+								625,
+								625
+							],
+							[
+								694,
+								694
 							]
 						],
 						"settings":
 						{
 							"is_xml": false,
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 23932.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gui_code/new_design.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2241,
+								2241
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1440.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1254,7 +1273,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 215.0
+		"height": 465.0
 	},
 	"output.find_results":
 	{
