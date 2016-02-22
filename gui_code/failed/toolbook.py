@@ -22,7 +22,7 @@ class SelectPanel(wx.Toolbook):
         # 时间
         panel = TimePanel(self, wx.ID_ANY, None)
         self.AddPage(panel, u"时间", imageId=index_1)
-
+        
         # 课程
         panel = CoursePanel(self, wx.ID_ANY, None)
         self.AddPage(panel, u"项目", imageId=index_2)
