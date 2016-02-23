@@ -1,7 +1,7 @@
 # _*_ coding:utf-8 _*_
 
 import wx
-import wx.grid
+import wx.grid as Grid
 import wx.lib.inspection
 
 #  FindWindowByName
@@ -52,8 +52,8 @@ class ButtonPanel(wx.Panel):
             self.ChangePanel(button_name)
 
     def ChangePanel(self, button_name):
-        #print "I need change panel for user"
-        #print button_name
+        # print "I need change panel for user"
+        # print button_name
         button_to_panel = {u"course_button": u"course_select_panel",  # course_select_panel
                            u"teacher_button": u"teacher_select_panel",
                            u"time_button": u"time_select_panel"}
@@ -70,28 +70,34 @@ class SelectPanel(wx.Panel):
         super(SelectPanel, self).__init__(
             parent, size=(900, 400), name=name)
         self.vsizer = wx.BoxSizer(wx.VERTICAL)
-        
-        self.vsizer.Add(TimeSelectPanel(self, u"time_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
-        self.vsizer.Add(CourseSelectPanel(self, u"course_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
-        self.vsizer.Add(TeacherSelectPanel(self, u"teacher_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
+
+        time_select_panel = TimeSelectPanel(self, u"time_select_panel")
+        course_select_panel = CourseSelectPanel(self, u"course_select_panel")
+        teacher_select_panel = TeacherSelectPanel(
+            self, u"teacher_select_panel")
+
+        self.vsizer.AddMany([(time_select_panel, 1, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5),
+                             (course_select_panel, 1, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5),
+                             (teacher_select_panel, 1, wx.ALL | wx.ALIGN_CENTER_HORIZONTAL, 5),])
+
 
         wx.FindWindowByName(u"course_select_panel").Hide()
         wx.FindWindowByName(u"teacher_select_panel").Hide()
 
         self.SetSizer(self.vsizer)
 
-
     def change_content(self, panel_name):
-        widget_names = [u"course_select_panel", u"time_select_panel", u"teacher_select_panel"]
+        widget_names = [u"course_select_panel",
+                        u"time_select_panel", u"teacher_select_panel"]
         for widget_name in widget_names:
             if widget_name == panel_name:
                 wx.FindWindowByName(widget_name).Show()
                 self.GetParent().Layout()
             else:
                 self.vsizer.Hide(wx.FindWindowByName(widget_name))
-               
-                #wx.FindWindowByName(widget_name).Hide()
-                #self.vsizer.Layout()
+
+                # wx.FindWindowByName(widget_name).Hide()
+                # self.vsizer.Layout()
                 self.GetParent().Layout()
 
 
@@ -108,21 +114,67 @@ class TimeSelectPanel(wx.Panel):
 
     def __init__(self, parent, name):
         super(TimeSelectPanel, self).__init__(
-            parent, name=name, size=(900, 400))
-        # bug 
-        #self.SetBackgroundColour("red")
-        
-        self.vsizer = wx.BoxSizer(wx.VERTICAL)
+            parent, name=name, )
+        # bug
+        self.counter = 0
+        # self.SetBackgroundColour("red")
 
-        time_grid = wx.grid.Grid(self)
-        time_grid.CreateGrid(5,10)
-        time_grid.SetCellValue(0, 0, "First cell")
+        self.vsizer = wx.BoxSizer(wx.HORIZONTAL)
 
+        self.time_grid = Grid.Grid(self, name="time_grid")
+        self.time_grid.EnableEditing(False) # 禁止编辑
+        self.time_grid.DisableDragGridSize() # 禁止在网格区缩放表格
+        self.time_grid.DisableDragRowSize()  # 禁止在行标题区拉伸表格
+        self.time_grid.DisableDragColSize()  # 禁止在列标题区拉伸网格
+        self.time_grid.SetSelectionBackground((255, 255, 255)) # 选择前景色为白色 看不见拖拽选择
+        self.time_grid.SetCellHighlightPenWidth(0) # 去掉单击高亮时显示的框
         
-        #content = wx.StaticText(self, label=u"时间选择面板")
-        self.vsizer.Add(time_grid, 1, wx.EXPAND|wx.ALL, 5)
+        self.time_grid.Bind(Grid.EVT_GRID_LABEL_LEFT_CLICK, self.OnLabelClick)
+        self.time_grid.Bind(Grid.EVT_GRID_RANGE_SELECT, self.OnRangeSelect)
+        self.time_grid.Bind(Grid.EVT_GRID_CELL_LEFT_CLICK, self.OnCellLeftClick)
+        
+        self.time_grid.CreateGrid(5, 8)
+        
+
+        # 显示星期几 
+        for row, num_cn in enumerate([u"一", u"二", u"三", u"四", u"五"]):
+            self.time_grid.SetRowLabelValue(row, u"星期{}".format(num_cn))
+        # 显示第几节
+        for col, num_cn in enumerate([u"一", u"二", u"三", u"四", u"五", u"六", u"七", u"八"]):
+            self.time_grid.SetColLabelValue(col, u"第{}节".format(num_cn))
+
+        self.vsizer.Add(self.time_grid, 2, wx.EXPAND)
         self.SetSizer(self.vsizer)
-        
+
+    def OnLabelClick(self, event):
+        u"""阻止用户点击标签栏，选择整行或整列"""
+        event.Veto()
+
+    def OnRangeSelect(self, event):
+        u"""看不见鼠标拖动选择"""
+        if self.time_grid.GetSelectionBlockTopLeft() ==  self.time_grid.GetSelectionBlockBottomRight():
+            pass
+        else:
+            self.time_grid.ClearSelection()
+            self.counter = self.counter + 1 
+            print "clear selection{}".format(self.counter)
+    
+    def OnCellLeftClick(self, event):
+        u""""""
+        print "CellClick"
+
+        row = event.GetRow()
+        col = event.GetCol()
+
+        selected_color = wx.Colour(255, 0, 0)
+        white = wx.Colour(255, 255, 255)
+        old_color = self.time_grid.GetCellBackgroundColour(row, col)
+        # 取消选择
+        if old_color == selected_color: # 红色
+            self.time_grid.SetCellBackgroundColour(row, col, white)
+        else:
+            self.time_grid.SetCellBackgroundColour(row, col, selected_color)
+        self.time_grid.Refresh()
 
 class CourseSelectPanel(wx.Panel):
     u""""""
@@ -135,9 +187,9 @@ class CourseSelectPanel(wx.Panel):
 
         content = wx.StaticText(self, label=u"课程选择面板")
         self.vsizer = wx.BoxSizer(wx.VERTICAL)
-        self.vsizer.Add(content, 1, wx.EXPAND|wx.ALL, 5)
+        self.vsizer.Add(content, 1, wx.EXPAND | wx.ALL, 5)
         self.SetSizer(self.vsizer)
-        
+
 
 class TeacherSelectPanel(wx.Panel):
     u""""""
@@ -145,14 +197,15 @@ class TeacherSelectPanel(wx.Panel):
     def __init__(self, parent, name):
         super(TeacherSelectPanel, self).__init__(
             parent, name=name)
-        # bug 
+        # bug
         self.SetBackgroundColour("gray")
 
-        content = wx.StaticText(self, label=u"老师选择面板", style=wx.ALIGN_CENTER_HORIZONTAL)
+        content = wx.StaticText(self, label=u"老师选择面板",
+                                style=wx.ALIGN_CENTER_HORIZONTAL)
         self.vsizer = wx.BoxSizer(wx.VERTICAL)
-        self.vsizer.Add(content, 1, wx.EXPAND|wx.ALL, 5)
+        self.vsizer.Add(content, 1, wx.EXPAND | wx.ALL, 5)
         self.SetSizer(self.vsizer)
-        
+
 
 class MyFrame(wx.Frame):
 
@@ -190,6 +243,8 @@ class MyApp(wx.App):
 
         self.frame.Show()
         self.frame.Center()
+        # 修复时间选择启动不显示
+        self.frame.Layout()
         return True
 
 if __name__ == "__main__":

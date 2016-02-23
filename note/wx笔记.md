@@ -235,3 +235,267 @@ image.SaveFile(stream, type) # 保存到输出流 type必须指定
 
 <img src="./MonoRaw.jpg" height="300"></img>
 <img src="./Mono=129, 207, 255.jpg" height="300"></img>
+
+
+## ID 相关
+
+wx.NewId()
+
+wx.ANYID
+
+wx.
+
+## Sizer Layout
+
+- 添加进Sizer的东西叫`item`。
+- 如果一个Sizer既不属于另一个Sizer,也不属于一个窗口（window）那么你就需要手动删除它。（orphan sizer）
+
+#### flag 
+
+flag有两种，一种是决定border的应用的地方，另一种是当Sizer的空间发生变化时决定空间如何分配给item。
+
+|flag|作用|||flag|作用|
+|----|----|||----|---|
+|wx.TOP|Border的方向|||wx.ALIGN_CENTER|item在分配空间中的排列|
+|wx.BOTTOM||||wx.ALIGN_LEFT||
+|wx.RIGHT||||wx.ALIGN_RIGHT||
+|wx.LFET||||wx.ALIGN_TOP||
+|wx.ALL||||wx.ALIGN_BOTTOM||
+|||||wx.ALIGN_CENTER_VERTICAL||
+
+|||
+|----|----|
+|wx.ALIGN_CENTER_HORIZONTAL||
+|wx.EXPAND|占据全部空间|
+|wx.SHAPE|扩张但保持比例|
+|wx.FIXED_MINSIZE|固定最小尺寸|
+|wx.RESERVE_SPACE_EVEN_IF_HIDDEN|分配空间给看不见的window|
+
+#### 组合flag
+
+`|`:样式组合
+
+`^`:样式删除
+
+`&`:样式取反？
+
+`~`: 
+
+
+#### Python bitwise
+
+|operator|例子|说明|
+|----|----|----|
+|`<<`|x << y|Shift等同于 x* 2**y|
+|`>>`|x >> y|等同于 x/ 2**y|
+
+` |`  `x | y` bitwise OR  x、y的每一位`或`运算结果为0则输出为0，否则为1。
+
+|||
+|---|---|---|
+|`&`||bitwise AND x、y的每一位`与`运算结果为1输出1，否则为0|
+|`~`|~ x|按位取反，等同于 -x-1|
+|`^`| x ^ y |bitwise XOR 异或 y位为0对应的x该位不变，y位为1时，对应x的位取反|
+
+
+### BoxSizer
+
+    Add(self, item, proportion, flag, border, userData)
+
+### GridSizer
+
+### StaticBoxSizer
+
+### FlexGridSizer
+
+### GridBagSizer
+
+### WrapSizer
+
+
+### PySizer
+
+## panel 动态更新
+
+
+## ToggleButton 开关按钮
+
+- 开关按钮的状态分为两种，按下是True 不按是False。
+- 可以禁止按钮，会保持按钮当前的状态。 禁止后就不会产生事件。
+- 事件处理器是： wx.EVT_TOGGLEBUTTON
+
+
+```python
+button = wx.ToggleButton(parent, id=ID_ANY, label="", 
+                        pos=wx.DefaultPosition,size=wx.DefaultSize,
+                        style=0, val=wx.DefaultValidator, 
+                        name=CheckBoxNameStr)
+
+button.GetValue()
+button.SetValue()
+
+button.Disable()
+button.Enable()
+```
+
+
+## event 处理
+
+- 禁止后就不会产生事件。
+
+```python
+def OnEvent(self, event):
+    obj = event.GetEventObject()
+    obj_id = event.GetId()
+    do something
+```
+
+- 事件传播 propagation
+
+Veto: 禁止传播
+
+Skip: 继续传播
+
+## 动态更新
+
+&emsp;&emsp;点击按钮后重新绘制面板的内容。
+
+    Fit FitInside Layout SetAutoLayout GetAutoLayout SetSizer GetSizer Raise Refresh Update
+
+    z-index 
+
+### 方案一 Hide Show
+
+`.Hide()` `.Show()`
+
+&emsp;&emsp;全部添加进一个Sizer，之后使用Hide或者Show响应按钮切换。
+
+优点：
+
+- 切换时不会重新绘制图形
+- 只需使用这两种方法即可
+
+疑问：
+
+- 使用Hide后下面的控件会自动显示在当前面板吗？
+    
+    不会
+
+- 需要手动更新面板吗？（Refresh、Layout、Update
+    + 需要，调用Layout即可。
+
+
+- Layout的调用在哪个类上进行？（frame、Panel、Sizer）
+    + 父类上调用Layout方法即可。`self.GetParent().Layout()`
+- 什么时候要这样子？
+```python
+        self.SetSizer(sizer)
+        sizer.Fit(self)
+```
+- 消除闪烁？
+
+
+新知识：
+
+- panel 只有一个widget也需要使用Sizer，frame不用
+ 
+
+来源：<a href="http://wxpython.org/Phoenix/docs/html/sizers_overview.html#hiding-controls-using-sizers" target="blank">官方文档hiding-controls-using-sizers</a>
+
+#### 结果
+
+```python
+class SelectPanel(wx.Panel):
+    u"""不显示具体内容
+    """
+
+    def __init__(self, parent, name):
+        super(SelectPanel, self).__init__(
+            parent, size=(900, 400), name=name)
+        self.vsizer = wx.BoxSizer(wx.VERTICAL)
+        
+        self.vsizer.Add(TimeSelectPanel(self, u"time_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
+        self.vsizer.Add(CourseSelectPanel(self, u"course_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
+        self.vsizer.Add(TeacherSelectPanel(self, u"teacher_select_panel"), 1, wx.ALIGN_CENTER_HORIZONTAL, 5)
+        
+        wx.FindWindowByName(u"course_select_panel").Hide()
+        wx.FindWindowByName(u"teacher_select_panel").Hide()
+
+        self.SetSizer(self.vsizer)
+
+
+    def change_content(self, panel_name):
+        widget_names = [u"course_select_panel", u"time_select_panel", u"teacher_select_panel"]
+        for widget_name in widget_names:
+            if widget_name == panel_name:
+                wx.FindWindowByName(widget_name).Show()
+                self.GetParent().Layout()
+            else:
+                self.vsizer.Hide(wx.FindWindowByName(widget_name))
+               
+                #wx.FindWindowByName(widget_name).Hide()
+                #self.vsizer.Layout()
+                self.GetParent().Layout()
+```
+
+### 方案二 Dynamic add and delete widgets to Sizer
+
+widget /ˈwɪdʒɪt/
+
+    Sizer Detach Destroy Remove Replace Add Insert Prepend
+
+创建好widget后调用parent或者Sizer的Layout方法。可能也需要调用Fit.
+
+来源：<a href="http://www.blog.pythonlibrary.org/2012/05/05/wxpython-adding-and-removing-widgets-dynamically/" target="blank">http://www.blog.pythonlibrary.org</a>
+
+## PopupMenu 
+
+&emsp;&emsp;每一个窗口都有一个方法  
+
+## Grid
+
+改变label：
+
+SetColLabelValue SetRowLabelValue 
+
+EnableEditing(False) DisableColResize(self, col) DisableDragColMove() DisableDragColSize DisableDragGridSize DisableDragRowSize  DisableRowResize
+
+### 表格大小拉伸
+
+DisableDragGridSize() # 禁止在网格区缩放表格
+DisableDragRowSize()  # 禁止在行标题区拉伸表格
+DisableDragColSize()  # 禁止在列标题区拉伸网格
+
+### 多选
+
+#### 自己实现
+
+    grid.SetCellBackgroundColour(row, col, colour)
+    grid.Refresh()
+
+左键单击改变背景色，取消原来的选择
+
+    SetSelectionMode
+    wx.grid.Grid.wxGridSelectCells
+    wx.grid.Grid.wxGridSelectRows
+    wx.grid.Grid.wxGridSelectColumns
+
+    SetSelectionBackground SetSelectionForeground SetGridLineColour SetLabelBackgroundColour SetLabelTextColour SetMargins
+
+    SetCellHighlightPenWidth(0)
+
+###### 禁止行、列选择
+
+style无法解决这个问题，保持单个表格选择的同时只能禁止行或列的选择。截取事件`wx.grid.Grid.EVT_GRID_LABEL_LEFT_CLICK` event.Veto()
+
+###### 左键单击事件处理
+
+    EVT_GRID_CELL_LEFT_CLICK
+    event.GetRow()
+    event.GetCol()
+
+wx.grid.EVT_GRID_SELECT_CELL
+
+来源：<a href="http://wxpython.org/Phoenix/docs/html/grid.Grid.html#grid.Grid">官方文档 grid.Grid</a>&emsp;
+<a href="http://wxpython.org/Phoenix/docs/html/grid_overview.html#grid-overview">grid_overview</a>&emsp;
+<a href="http://wxpython.org/Phoenix/docs/html/grid.GridEvent.html#grid.GridEvent">GridEvent</a>
