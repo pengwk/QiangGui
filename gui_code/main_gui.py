@@ -1,7 +1,10 @@
 # _*_ coding:utf-8 _*_
 
+import os
+
 import wx
 import wx.grid as Grid
+import wx.lib.buttons as GenButton
 import wx.lib.inspection
 
 #  FindWindowByName
@@ -183,11 +186,19 @@ class CourseSelectPanel(wx.Panel):
         super(CourseSelectPanel, self).__init__(
             parent, name=name)
         # bug
-        self.SetBackgroundColour("blue")
+        # self.SetBackgroundColour("blue")
 
-        content = wx.StaticText(self, label=u"课程选择面板")
-        self.vsizer = wx.BoxSizer(wx.VERTICAL)
-        self.vsizer.Add(content, 1, wx.EXPAND | wx.ALL, 5)
+        self.vsizer = wx.BoxSizer(wx.HORIZONTAL)
+
+        course_list = [u"篮球.jpg", u"健美.jpg", u"健身.jpg", u"排球.jpg", u"武术.jpg", u"游泳.jpg", u"足球.jpg", u"羽毛球.jpg", u"瑜伽.jpg", u"健美操.jpg", u"网球.jpg", u"乒乓球.jpg",]
+        img_dir = "C:\Users\wk\OneDrive\W\QiangGui\img"
+        
+        for course in course_list:
+            bmp = wx.Image(os.path.join(img_dir, course)).ConvertToBitmap()
+            course_button = GenButton.GenBitmapToggleButton(self,-1, bmp)
+            course_button.SetBitmapSelected(bmp)
+            self.vsizer.Add(course_button, 1, wx.EXPAND | wx.ALL, 5)
+
         self.SetSizer(self.vsizer)
 
 
