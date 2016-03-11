@@ -170,7 +170,7 @@ class JWCAuth(object):
             step_4.url, step_4.headers))
         save_html(step_4, "step_4.html")
         self.auth_cookie = step_4.cookies
-        #self.auth.headers.update(step_4.cookies)
+        # self.auth.headers.update(step_4.cookies)
         return None
 
     def never_give_up(self):
@@ -206,13 +206,13 @@ class JWCAuth(object):
                      "SJ": "0",  # 0： 原始成绩 1：有效成绩
                      "SelXNXQ": "0",  # 0:入学以来 1：学年 2：学期
                      "zfx_flag": "0"  # 0：主修 1：辅修
-            }
+                     }
         post = requests.post(urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx",
-                            cookies=self.auth_cookie,
-                            headers=_header(Host=urls["jwxt"][7:],
-                                            Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx"),
-                            data=form_data
-                            )
+                             cookies=self.auth_cookie,
+                             headers=_header(Host=urls["jwxt"][7:],
+                                             Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore.aspx"),
+                             data=form_data
+                             )
         # 解析URL
         soup = BeautifulSoup(post.text, 'lxml')
         imgs = soup.find_all("img")
@@ -227,7 +227,7 @@ class JWCAuth(object):
                 imgs_info[index].append(url)
             else:
                 xn, xq = int(xnxq[:4]), int(xnxq[4:])
-                filename = u"{}-{}学年第{}学期.png".format(xn, xn + 1, xq+1)
+                filename = u"{}-{}学年第{}学期.png".format(xn, xn + 1, xq + 1)
                 imgs_info.append(xnxq)
                 imgs_info.append([filename, url])
         for index in xrange(1, len(imgs_info), 2):
@@ -237,22 +237,24 @@ class JWCAuth(object):
                 #
                 def get_img(url):
                     res = requests.get(urls["jwxt"] + "/jwweb/xscj/" + url,
-                                headers=_header(Host=urls["jwxt"][7:],
-                                                Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
-                                cookies=self.auth_cookie)
+                                       headers=_header(Host=urls["jwxt"][7:],
+                                                       Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
+                                       cookies=self.auth_cookie)
                     return res.content
                 contents = [get_img(url) for url in img_info[1:]]
-                imgfile = vertical_merge(*[StringIO(content) for content in contents])
+                imgfile = vertical_merge(
+                    *[StringIO(content) for content in contents])
                 imgfile.save(filename, format="png")
             else:
                 url = img_info[1]
                 res = requests.get(urls["jwxt"] + "/jwweb/xscj/" + url,
-                                headers=_header(Host=urls["jwxt"][7:],
-                                                Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
-                                cookies=self.auth_cookie)
+                                   headers=_header(Host=urls["jwxt"][7:],
+                                                   Referer=urls["jwxt"] + "/jwweb/xscj/Stu_MyScore_rpt.aspx"),
+                                   cookies=self.auth_cookie)
                 imgfile = Image.open(StringIO(res.content))
                 imgfile.save(filename, format="png")
         return None
+
 
 class TYXKAuth(object):
     """docstring for TyxkAuth"""
@@ -340,16 +342,126 @@ class TYXKAuth(object):
     def logout(self):
         pass
 
+
 class NICZY(object):
     u"""学校媒体资源网客户端
     http://niczy.dgut.edu.cn
     """
+
     def __init__(self, arg):
         super(NICZY, self).__init__()
         self.arg = arg
-    
+
     def login(self):
         pass
 
     def logout(self):
         pass
+
+
+class DgutCas(object):
+    """docstring for ClassName"""
+
+    def __init__(self, username, password):
+        super(DgutCas, self).__init__()
+        self._username = username
+        self._password = password
+
+    def cas(self, appid):
+        u"""
+        :param appid: string for example "tyxk" 
+        :return: raise ValueError if given a wrong password else return location url
+        """
+
+        url = "https://cas.dgut.edu.cn"
+        return_url = "/?appid={}".format(appid)
+        
+        params = {"ReturnUrl": return_url,
+                  "appid": appid}
+
+        data = {"UserName": self._username,
+                "Password": self._password,
+                "ReturnUrl": return_url,
+                }
+
+        session = requests.Session()
+        session.headers["User-Agent"] = UserAgent
+        session.verify = False
+
+        get = session.get(url + "/User/Login", params=params,)
+
+        token_name = "__RequestVerificationToken"
+        token = self.get_form_token(get, token_name)
+        data.update({token_name: token})
+        
+        session.headers["Referer"] = get.url
+
+        post = session.post(get.url, data=data, allow_redirects=False)
+
+        if post.status_code == 200:
+            # 判断密码错误
+            raise ValueError("wrong password error")
+        elif post.status_code == 302:
+            location = session.get(url + return_url, allow_redirects=False)
+            return location.headers["location"]
+
+    def get_form_token(self, response, token_name):
+        u"""
+        :param response: requests.Response object
+        """
+
+        soup = BeautifulSoup(response.text, "lxml")
+        element = soup.find_all(attrs={"name": token_name})[0]
+        return element["value"]
+
+    def niczy(self, ):
+        pass
+
+    def tyxk(self, ):
+        session = requests.Session()
+        session.headers["User-Agent"] = UserAgent
+        session.verify = False
+        # 获取cookie php
+        tyxk_home = "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login"
+        while True:
+            try:
+                home = session.get(tyxk_home, timeout=6)
+                if len(home.cookies) == 1:
+                    break
+            except requests.exceptions.Timeout:
+                pass
+
+        try:
+            url = self.cas("tyxk")
+        except ValueError:
+            raise
+        
+        while True:
+            try:
+                get = session.get(url, timeout=6)
+            
+                if len(session.cookies) == 1:
+                    return session
+            except requests.exceptions.Timeout:
+                pass
+
+    def jwxt(self, ):
+        pass
+
+    def self_(self, ):
+        pass
+
+    def my(self, ):
+        pass
+
+    def yktcx(self, ):
+        pass
+
+    def wlbx(self, ):
+        pass
+
+def test():
+    # import auth
+    cas = auth.DgutCas("201441302623", "pwkilove5")
+    tyxk = cas.cas("tyxk")
+

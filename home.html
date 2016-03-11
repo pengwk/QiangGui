@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="shortcut icon" href="/Public/static/img/favicon.ico" type="image/x-icon">
+
+		<title>东莞理工学院 体育选课系统</title>
+		<link href="/Public/static/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="/Public/static/css/signin.css" rel="stylesheet" />
+		<link href="/Public/static/css/chinese_fonts.css" rel="stylesheet" />
+		<!--[if lt IE 9]>
+            <script src="/Public/static/js/html5shiv.min.js"></script>
+            <script src="/Public/static/js/respond.min.js"></script>
+        <![endif]-->
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="row">
+				<img height="64px" src="/Public/static/img/logo.png">&nbsp;<span class="badge">Version 2.1</span>
+				</img>
+			</div>
+			<br />
+			<div class="row">
+				<div class="col-md-4">
+					<br />
+					<img src="/Public/static/img/left_banner.png" />
+				</div>
+				<div class="col-md-8">
+                    <div style="padding: 5%">
+                                                <div align="center" class="alert alert-danger">您还没有登录，请登录后操作。</div>
+                                                <div align="center" class="alert alert-info"><b id="wait">3</b>秒后<a id="href" href="/index.php?m=&c=Index&a=login">跳转</a></div>
+                    </div>
+				</div>
+				<script type="text/javascript">
+					(function() {
+						var wait = document.getElementById('wait'),
+							href = document.getElementById('href').href;
+						var interval = setInterval(function() {
+							var time = --wait.innerHTML;
+							if (time <= 0) {
+								location.href = href;
+								clearInterval(interval);
+							};
+						}, 1000);
+					})();
+				</script>
+			</div>
+			<footer class="row">
+				<hr />
+				<div align="center" style="font-size: medium;">网站支持：&nbsp;<a href="http://tyx.dgut.edu.cn/">体育系</a>&nbsp;&nbsp;<a href="http://nic.dgut.edu.cn">网络中心</a>&nbsp;&nbsp;2014年09月</div>
+			</footer>
+		</div>
+		<!-- /container -->
+		<script src="/Public/static/js/jquery-1.11.2.min.js"></script>
+		<script src="/Public/static/js/bootstrap.min.js"></script>
+	</body>
+</html>

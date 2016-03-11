@@ -4,6 +4,98 @@
 		"selected_items":
 		[
 			[
+				"Use",
+				"UserAgent"
+			],
+			[
+				"U",
+				"UserAgent"
+			],
+			[
+				"User",
+				"User-Agent"
+			],
+			[
+				"Ch",
+				"CheckPassword"
+			],
+			[
+				"pass",
+				"password_text"
+			],
+			[
+				"AL",
+				"ALIGN_CENTER"
+			],
+			[
+				"Al",
+				"ALIGN_CENTER"
+			],
+			[
+				"Stat",
+				"StaticText"
+			],
+			[
+				"A",
+				"ALIGN_CENTER"
+			],
+			[
+				"B",
+				"BORDER_NONE"
+			],
+			[
+				"cop",
+				"copyright_text"
+			],
+			[
+				"school_",
+				"school_msg"
+			],
+			[
+				"school",
+				"school_text"
+			],
+			[
+				"author_",
+				"author_name"
+			],
+			[
+				"author",
+				"author_text"
+			],
+			[
+				"wecha",
+				"wechat_text"
+			],
+			[
+				"mail_",
+				"mail_addr"
+			],
+			[
+				"title",
+				"title"
+			],
+			[
+				"img",
+				"img_dir"
+			],
+			[
+				"CEN",
+				"ALIGN_CENTER"
+			],
+			[
+				"Top",
+				"TopStateBar"
+			],
+			[
+				"bir",
+				"birth_gender_sizer"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
 				"selec",
 				"selected_color"
 			],
@@ -192,10 +284,6 @@
 				"capacity"
 			],
 			[
-				"name",
-				"name"
-			],
-			[
 				"wante",
 				"wantAble"
 			],
@@ -360,10 +448,6 @@
 				"try	Try/Except"
 			],
 			[
-				"img",
-				"imgname"
-			],
-			[
 				"se",
 				"session"
 			],
@@ -430,78 +514,6 @@
 			[
 				"a",
 				"Account"
-			],
-			[
-				"v",
-				"v4ip1"
-			],
-			[
-				"mo",
-				"Model"
-			],
-			[
-				"stat",
-				"start"
-			],
-			[
-				"tim",
-				"timeer"
-			],
-			[
-				"dump",
-				"json.dumps"
-			],
-			[
-				"loa",
-				"json.loads"
-			],
-			[
-				"flo",
-				"flow"
-			],
-			[
-				"ser",
-				"serverUrl"
-			],
-			[
-				"co",
-				"r1.cookies"
-			],
-			[
-				"rpi",
-				"rpiData"
-			],
-			[
-				"fin",
-				"h.findAll"
-			],
-			[
-				"st",
-				"startTime"
-			],
-			[
-				"for",
-				"form	Tag"
-			],
-			[
-				"fo",
-				"form	Tag"
-			],
-			[
-				"me",
-				"meta"
-			],
-			[
-				"n",
-				"nGPIO"
-			],
-			[
-				"ge",
-				"getCommand"
-			],
-			[
-				"c",
-				"%connect_info"
 			]
 		]
 	},
@@ -511,23 +523,14 @@
 			"file": "gui_code/main_gui.py",
 			"settings":
 			{
-				"buffer_size": 8714,
+				"buffer_size": 25180,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "gui_code/failed/toolbook.py",
 			"settings":
 			{
-				"buffer_size": 2667,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Program Files/wxPython3.0 Docs and Demos/demo/GridSimple.py",
-			"settings":
-			{
-				"buffer_size": 9649,
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
@@ -535,15 +538,34 @@
 			"file": "note/wx笔记.md",
 			"settings":
 			{
-				"buffer_size": 10973,
+				"buffer_size": 13866,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "note/python笔记.md",
+			"contents": "# _*_ coding:utf-8 _*_\n\nfrom bs4 import BeautifulSoup\nfrom PIL import Image\nfrom StringIO import StringIO\nimport requests\nimport urlparse\nimport logging\nimport time\nimport useragent\n\n__doc__ = u\"tyxk登录 返回cookie：PHPSESSID\"\n\nlogging.basicConfig(\n    format=\"%(levelname)-10s %(message)s\",\n    level=logging.DEBUG)\n\nlog = logging.getLogger(\"auth\")\nhandler = logging.FileHandler(\"auth.log\")\nhandler.setLevel(logging.DEBUG)\nlog.addHandler(handler)\n\n\nrequests.packages.urllib3.disable_warnings()\n\nUserAgent = useragent.rand_agent()\nSTREAM_FLAG = False\n\n\ndef _header(ContentType=None, **_dict):\n    u\"\"\"产生header\n    第一个是位置参数ContentType因为连字符`-`不可用于关键字定义，其余是关键字参数\n    \"\"\"\n    general = {\"Progma\": \"no-cache\",\n               \"User-Agent\": UserAgent,\n               \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\",\n               \"Accept-Encoding\": \"gzip, deflate, sdch\",\n               \"Accept-Language\": \"zh-CN,zh;q=0.8\",\n               \"Connection\": \"keep-alive\",\n               \"Cache-Control\": \"no-cache\"}\n    if ContentType:\n        general.update({\"Content-Type\": ContentType})\n    general.update(_dict)\n    return general\n\n\ndef hidden_form(postpage):\n    u\"\"\"postpage 必须是resopse.text\n    \"\"\"\n    _dict = {}\n    soup = BeautifulSoup(postpage, \"lxml\")\n    hiddens = soup.form.find_all(attrs={\"type\": \"hidden\"})\n    for hidden in hiddens:\n        _dict[hidden[\"name\"]] = hidden[\"value\"]\n    return _dict\n\n\ndef save_html(response, filename):\n    u\"\"\"保存requests库请求的页面\n    用于调试\n    \"\"\"\n    with open(filename, \"wb\") as html:\n        html.write(response.content)\n    return None\n\n\ndef vertical_merge(img_top, img_bottom):\n    u\"\"\"合并两个宽度相同的图像,垂直的方式\n    img_top = StringIO(res.content)\n    41pixel\n    \"\"\"\n    top = Image.open(img_top)\n    bottom = Image.open(img_bottom)\n    width = top.width\n    height = top.height + bottom.height - 41\n    new_img = Image.new(\"RGB\", (width, height))\n    new_img.paste(top, (0, 0))\n    crop = bottom.crop((0, 41, bottom.width, bottom.height))\n    new_img.paste(crop, (0, top.height))\n    return new_img\n\nurls = {\"login\": \"http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login\",\n        \"check_login\": \"http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=check_login\",\n        \"home\": \"http://tyxk.dgut.edu.cn/index.php?m=Home&c=Student&a=index\",\n        \"cas_tyxk\": \"https://cas.dgut.edu.cn/?appid=tyxk\",\n        \"cas_post\": \"https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3dtyxk&appid=tyxk\",\n        \"cas_host\": \"cas.dgut.edu.cn\",\n        \"tyxk_host\": \"tyxk.dgut.edu.cn\",\n        \"tyxk_base\": \"http://tyxk.dgut.edu.cn/\",\n        \"cas_base\": \"https://cas.dgut.edu.cn\",\n        #\"jwxt\": \"http://jwxt.dgut.edu.cn/jwweb/\",\n        \"cas_jwxt\": \"https://cas.dgut.edu.cn/?appid=jwxt\",\n        \"jwxt_post\": \"https://cas.dgut.edu.cn/User/Login?ReturnUrl=%2f%3fappid%3djwxt&appid=jwxt\",\n        \"jwxt_host\": \"jwxt.dgut.edu.cn\",\n        \"jwxt_logout\": \"http://jwxt.dgut.edu.cn/jwweb/sys/Logout.aspx\",\n\n        # new url system\n        \"cas\": \"https://cas.dgut.edu.cn\",\n        \"jwxt\": \"http://jwxt.dgut.edu.cn\",\n        \"tyxk\": \"http://tyxk.dgut.edu.cn\"\n        }\n\n\n# return step_1.cookies, UserAgent\n\n\nclass JWCAuth(object):\n    \"\"\"docstring for jwcAuth\"\"\"\n\n    def __init__(self, username, password):\n        super(JWCAuth, self).__init__()\n        self.post_dict = {\"UserName\": username,\n                          \"Password\": password}\n        self.auth_cookie = None\n        self.auth = requests.Session()\n        self.auth.headers.update(_header())\n\n    def login(self):\n\n        step_1 = requests.get(urls[\"cas\"] + \"/User/Login\",  # urls[\"jwxt_post\"],\n                              params={\"ReturnUrl\": \"/?appid=jwxt\",\n                                      \"appid\": \"jwxt\"},\n                              headers=_header(Host=urls[\"cas_host\"]),\n                              allow_redirects=False,\n                              verify=False,\n                              stream=STREAM_FLAG)\n        # for debug\n        save_html(step_1, \"step_1.html\")\n        log.debug(\"\\nstep_1\\nRequest:\\n{}\\nResponse:\\n{}\".format(\n            step_1.url, step_1.headers))\n        time.sleep(2)\n\n        hiddens = hidden_form(step_1.text)\n        form_data = (lambda a, b: b)(hiddens.update(self.post_dict), hiddens)\n        step_2 = requests.post(step_1.url,  # urls[\"jwxt_post\"],\n                               headers=_header(\"application/x-www-form-urlencoded\",\n                                               Host=urls[\"cas\"][8:],\n                                               Referer=step_1.url),\n                               cookies=step_1.cookies,\n                               data=form_data,\n                               allow_redirects=False,\n                               verify=False,\n                               stream=STREAM_FLAG\n                               )\n        save_html(step_2, \"step_2.html\")\n        log.debug(\"\\nstep_2\\nRequest:\\n{}\\nResponse:\\n{}\".format(\n            step_2.url, step_2.headers))\n        time.sleep(0.5)\n\n        step_3 = requests.get(urls[\"cas\"],\n                              params={\"appid\": \"jwxt\"},\n                              headers=_header(Host=urls[\"cas\"][8:],\n                                              Referer=step_1.url),\n                              allow_redirects=False,\n                              verify=False,\n                              cookies=(lambda a, b: b)(step_1.cookies.update(\n                                  step_2.cookies), step_1.cookies),\n                              stream=STREAM_FLAG\n                              )\n        log.debug(\"\\nstep_3\\nRequest:\\n{}\\nResponse:\\n{}\".format(\n            step_3.url, step_3.headers))\n        save_html(step_3, \"step_3.html\")\n        time.sleep(0.5)\n        step_4 = requests.get(step_3.headers[\"location\"],\n                              headers=_header(Host=urls[\"jwxt\"][7:]),\n                              allow_redirects=False,\n                              verify=False,\n                              stream=STREAM_FLAG)\n        log.debug(\"\\nstep_4\\nRequest:\\n{}\\nResponse:\\n{}\".format(\n            step_4.url, step_4.headers))\n        save_html(step_4, \"step_4.html\")\n        self.auth_cookie = step_4.cookies\n        # self.auth.headers.update(step_4.cookies)\n        return None\n\n    def never_give_up(self):\n        try_num = 0\n        while True:\n            try:\n                try_num += 1\n                return self.login()\n            except:\n                pass\n\n    def logout(self):\n        res = requests.get(urls[\"jwxt\"] + \"/jwweb/sys/Logout.aspx\",\n                           cookies=self.auth_cookie,\n                           headers=_header(Host=urls[\"jwxt_host\"],\n                                           Referer=urls[\"jwxt\"] + \"/jwweb/SYS/Main_tools.aspx\"),\n                           allow_redirects=False,\n                           verify=False)\n        return res\n\n    def get_score(self):\n        # get txt_xm\n        step_1 = requests.get(urls[\"jwxt\"] + \"/jwweb/xscj/Stu_MyScore.aspx\",\n                              headers=_header(Host=urls[\"jwxt\"][7:],\n                                              Referer=urls[\"jwxt\"] + \"/jwweb/sys/menu.aspx\"),\n                              cookies=self.auth_cookie)\n        save_html(step_1, \"get_score_step_1.html\")\n\n        soup_1 = BeautifulSoup(step_1.text, 'lxml')\n        txt_xm = soup_1.find_all(attrs={\"name\": \"txt_xm\"})[0][\"value\"]\n        form_data = {\"txt_xm\": txt_xm,\n                     \"btn_search\": \"%BC%EC%CB%F7\",\n                     \"SJ\": \"0\",  # 0： 原始成绩 1：有效成绩\n                     \"SelXNXQ\": \"0\",  # 0:入学以来 1：学年 2：学期\n                     \"zfx_flag\": \"0\"  # 0：主修 1：辅修\n                     }\n        post = requests.post(urls[\"jwxt\"] + \"/jwweb/xscj/Stu_MyScore_rpt.aspx\",\n                             cookies=self.auth_cookie,\n                             headers=_header(Host=urls[\"jwxt\"][7:],\n                                             Referer=urls[\"jwxt\"] + \"/jwweb/xscj/Stu_MyScore.aspx\"),\n                             data=form_data\n                             )\n        # 解析URL\n        soup = BeautifulSoup(post.text, 'lxml')\n        imgs = soup.find_all(\"img\")\n        # (xnxq, (filename, src, src))\n        imgs_info = []\n        for img in imgs:\n            url = img[\"src\"]\n            # 20141:2014-2015学年第二学期 20140第一学期\n            xnxq = urlparse.parse_qs(url.split(\"?\")[1], True)[\"xnxq\"][0]\n            if xnxq in imgs_info:\n                index = imgs_info.index(xnxq) + 1\n                imgs_info[index].append(url)\n            else:\n                xn, xq = int(xnxq[:4]), int(xnxq[4:])\n                filename = u\"{}-{}学年第{}学期.png\".format(xn, xn + 1, xq + 1)\n                imgs_info.append(xnxq)\n                imgs_info.append([filename, url])\n        for index in xrange(1, len(imgs_info), 2):\n            img_info = imgs_info[index]\n            filename = img_info[0]\n            if len(img_info) > 2:\n                #\n                def get_img(url):\n                    res = requests.get(urls[\"jwxt\"] + \"/jwweb/xscj/\" + url,\n                                       headers=_header(Host=urls[\"jwxt\"][7:],\n                                                       Referer=urls[\"jwxt\"] + \"/jwweb/xscj/Stu_MyScore_rpt.aspx\"),\n                                       cookies=self.auth_cookie)\n                    return res.content\n                contents = [get_img(url) for url in img_info[1:]]\n                imgfile = vertical_merge(\n                    *[StringIO(content) for content in contents])\n                imgfile.save(filename, format=\"png\")\n            else:\n                url = img_info[1]\n                res = requests.get(urls[\"jwxt\"] + \"/jwweb/xscj/\" + url,\n                                   headers=_header(Host=urls[\"jwxt\"][7:],\n                                                   Referer=urls[\"jwxt\"] + \"/jwweb/xscj/Stu_MyScore_rpt.aspx\"),\n                                   cookies=self.auth_cookie)\n                imgfile = Image.open(StringIO(res.content))\n                imgfile.save(filename, format=\"png\")\n        return None\n\n\nclass TYXKAuth(object):\n    \"\"\"docstring for TyxkAuth\"\"\"\n\n    def __init__(self, arg):\n        super(TYXKAuth, self).__init__()\n        self.arg = arg\n\n    def login(self, username, password):\n        u\"\"\"\n        \"\"\"\n        try:\n            step_1 = requests.get(urls[\"login\"],\n                                  headers=_header(Host=urls[\"tyxk_host\"]),\n                                  allow_redirects=False,\n                                  verify=False)  # PHPSESSID\n\n            step_2 = requests.get(urls[\"check_login\"],\n                                  headers=_header(Host=urls[\"tyxk_host\"],\n                                                  Referer=step_1.url),\n                                  cookies=step_1.cookies,\n                                  allow_redirects=False,\n                                  verify=False)\n\n            step_3 = requests.get(urls[\"cas_tyxk\"],\n                                  headers=_header(Host=urls[\"cas_host\"],\n                                                  Referer=urls[\"tyxk_base\"]),\n                                  # cookies=,\n                                  allow_redirects=False,\n                                  verify=False)\n\n            # __RequestVerificationToken\n            step_4 = requests.get(urls[\"cas_post\"],\n                                  headers=_header(Host=urls[\"cas_host\"],\n                                                  Referer=urls[\"tyxk_base\"]),\n                                  # cookies=,\n                                  allow_redirects=False,\n                                  verify=False)\n\n            # step_4_cookie = step_4.cookies.get_dict().items()[0]\n            # 表单里的是用来检测是否交换的\n\n            form_data = {\"UserName\": \"201441302623\",\n                         \"Password\": \"pwkilove5\",\n                         \"ReturnUrl\": \"/?appid=tyxk\",\n                         step_4_cookie[0]: step_4_cookie[1]}\n\n            # .ASPAUTH\n            step_5 = requests.post(urls[\"cas_post\"],\n                                   data=form_data,\n                                   headers=_header(\"application/x-www-form-urlencoded\",\n                                                   Host=urls[\"cas_host\"],\n                                                   Referer=urls[\"cas_post\"],\n                                                   Origin=urls[\"cas_base\"]\n                                                   ),\n                                   cookies=step_4.cookies,\n                                   allow_redirects=False,\n                                   verify=False)\n\n            step_6 = requests.get(urls[\"cas_tyxk\"],\n                                  headers=_header(Host=urls[\"cas_host\"],\n                                                  Referer=urls[\"cas_post\"]),\n                                  cookies=(lambda a, b: b)(step_4.cookies.update(\n                                      step_5.cookies), step_4.cookies),\n                                  allow_redirects=False,\n                                  verify=False)\n\n            # platform=pc url\n            step_7 = requests.get(step_6.headers[\"location\"],\n                                  headers=_header(Host=urls[\"tyxk_host\"]),\n                                  cookies=step_1.cookies,\n                                  allow_redirects=False,\n                                  verify=False)\n\n            step_8 = requests.get(urls[\"home\"],\n                                  headers=_header(Host=urls[\"tyxk_host\"],\n                                                  Referer=step_7.url),\n                                  cookies=step_1.cookies,\n                                  allow_redirects=False,\n                                  verify=False)\n            return step_1.cookies\n        except:\n            return None\n\n    def logout(self):\n        pass\n\n\nclass NICZY(object):\n    u\"\"\"学校媒体资源网客户端\n    http://niczy.dgut.edu.cn\n    \"\"\"\n\n    def __init__(self, arg):\n        super(NICZY, self).__init__()\n        self.arg = arg\n\n    def login(self):\n        pass\n\n    def logout(self):\n        pass\n\n\nclass DgutCas(object):\n    \"\"\"docstring for ClassName\"\"\"\n\n    def __init__(self, username, password):\n        super(DgutCas, self).__init__()\n        self._username = username\n        self._password = password\n\n    def cas(self, appid):\n        u\"\"\"\n        :param appid: string for example \"tyxk\" \n        :return: raise ValueError if given a wrong password else return location url\n        \"\"\"\n\n        url = \"https://cas.dgut.edu.cn\"\n        return_url = \"/?appid={}\".format(appid)\n        \n        params = {\"ReturnUrl\": return_url,\n                  \"appid\": appid}\n\n        data = {\"UserName\": self._username,\n                \"Password\": self._password,\n                \"ReturnUrl\": return_url,\n                }\n\n        session = requests.Session()\n        session.headers[\"User-Agent\"] = UserAgent\n        session.verify = False\n\n        get = session.get(url + \"/User/Login\", params=params,)\n\n        token_name = \"__RequestVerificationToken\"\n        token = self.get_form_token(get, token_name)\n        data.update({token_name: token})\n        \n        session.headers[\"Referer\"] = get.url\n\n        post = session.post(get.url, data=data, allow_redirects=False)\n\n        if post.status_code == 200:\n            # 判断密码错误\n            raise ValueError(\"wrong password error\")\n        elif post.status_code == 302:\n            location = session.get(url + return_url, allow_redirects=False)\n            return location.headers[\"location\"]\n\n    def get_form_token(self, response, token_name):\n        u\"\"\"\n        :param response: requests.Response object\n        \"\"\"\n\n        soup = BeautifulSoup(response.text, \"lxml\")\n        element = soup.find_all(attrs={\"name\": token_name})[0]\n        return element[\"value\"]\n\n    def niczy(self, ):\n        pass\n\n    def tyxk(self, ):\n        try:\n            url = self.cas(\"tyxk\")\n        except ValueError:\n            raise\n        session = requests.Session()\n        session.headers[\"User-Agent\"] = UserAgent\n        session.verify = False\n        while True:\n            try:\n                get = session.get(url, timeout=6)\n                print \"get\", get.cookies\n                print \"session\", session.cookies\n                if len(session.cookies) == 1:\n                    return session\n            except:\n                print \"new connection\"\n                print session.cookies\n\n    def jwxt(self, ):\n        pass\n\n    def self_(self, ):\n        pass\n\n    def my(self, ):\n        pass\n\n    def yktcx(self, ):\n        pass\n\n    def wlbx(self, ):\n        pass\n\ndef test():\n    # import auth\n    cas = auth.DgutCas(\"201441302623\", \"pwkilove5\")\n    tyxk = cas.cas(\"tyxk\")\n\nclass PhysicalClient(object):\n    def ",
+			"file": "auth.py",
+			"file_size": 17516,
+			"file_write_time": 131021407619571688,
 			"settings":
 			{
-				"buffer_size": 157,
+				"buffer_size": 16816,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gui_code/login.py",
+			"settings":
+			{
+				"buffer_size": 17559,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gui_code/teachers_info.py",
+			"settings":
+			{
+				"buffer_size": 10010,
 				"line_ending": "Windows"
 			}
 		}
@@ -918,11 +940,19 @@
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/failed",
 		"/C/Users/wk/OneDrive/W/QiangGui/note",
+		"/C/Users/wk/OneDrive/W/QiangGui/old_code",
 		"/C/Users/wk/OneDrive/W/QiangGui/ps"
 	],
 	"file_history":
 	[
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/failed/qiang.py",
+		"/C/Python27/Lib/site-packages/wx-3.0-msw/wx/gizmos.py",
+		"/C/Python27/Lib/site-packages/wx-3.0-msw/wx/webkit.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/avatar_process.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/note/python笔记.md",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-build",
+		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
+		"/C/Program Files/wxPython3.0 Docs and Demos/demo/GridSimple.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/failed/toolbook.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/login.py",
 		"/C/Users/wk/Downloads/radiobutton_sample.py",
@@ -1042,14 +1072,7 @@
 		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rsyslog.conf",
 		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/sysctl.conf",
 		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/inittab",
-		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rc.local",
-		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rcS.d/README",
-		"//RASPBERRYPI/quanbu/etc/rpi-issue",
-		"/C/Users/wk/Downloads/ModCalcProject (1).txt",
-		"/C/Users/wk/Desktop/hosts",
-		"/C/Windows/System32/Drivers/etc/hosts",
-		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/README.md",
-		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rc.local"
 	],
 	"find":
 	{
@@ -1067,6 +1090,13 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"cookies",
+			"    \n",
+			"                        \n",
+			"处理课程选择事件，删除选择课程，更新到DoSelectPanel",
+			"胡",
+			"老师信息",
+			"pic",
 			"EVT_GRID_LABEL_LEFT_CLICK",
 			"wx.grid",
 			"时获得。",
@@ -1131,7 +1161,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1140,15 +1170,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8714,
+						"buffer_size": 25180,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6937,
-								6937
+								19322,
+								19322
 							]
 						],
 						"settings":
@@ -1158,81 +1188,46 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5124.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "gui_code/failed/toolbook.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2667,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								551,
-								551
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Program Files/wxPython3.0 Docs and Demos/demo/GridSimple.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9649,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2083,
-								2083
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 2402.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "note/wx笔记.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10973,
+						"buffer_size": 13866,
 						"regions":
 						{
 							"TagLint":
@@ -1242,8 +1237,8 @@
 								"regions":
 								[
 									[
-										5495,
-										5498
+										5980,
+										5983
 									]
 								],
 								"scope": "variable.parameter"
@@ -1252,12 +1247,13 @@
 						"selection":
 						[
 							[
-								9894,
-								9894
+								13603,
+								13603
 							]
 						],
 						"settings":
 						{
+							"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
 							"is_xml": false,
 							"origin_encoding": "UTF-8",
 							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage",
@@ -1265,40 +1261,102 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 21261.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "note/python笔记.md",
+					"buffer": 3,
+					"file": "auth.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 157,
+						"buffer_size": 16816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								112,
-								112
+								16816,
+								16816
 							]
 						],
 						"settings":
 						{
-							"is_xml": false,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 12488.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "gui_code/login.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 17559,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13608,
+								13608
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9156.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "gui_code/teachers_info.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2355,
+								2355
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1337,7 +1395,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 217.0
+		"height": 381.0
 	},
 	"output.find_results":
 	{
@@ -1363,7 +1421,7 @@
 	{
 		"height": 546.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
 	"project": "QiangGui.sublime-project",
 	"replace":
 	{

@@ -177,6 +177,38 @@ image.SaveFile(stream, type) # 保存到输出流 type必须指定
 |mac cursor|wx.BITMAP_TYPE_MACCURSOR	 ||
 |any|wx.BITMAP_TYPE_ANY|自动检测格式|
 
+### 大小尺寸处理
+
+`Copy` `Create` `Destroy` `Mirror`  `Paste` `Rescale` `Scale` `Resize` `Rotate` `Rotate180` `Rotate90` `RotateHue` 
+
+#### 缩放
+
+`Scale` `Rescale` `Resize`
+
+##### 缩放图片质量控制
+
+|代码|描述|
+|---|---|
+|wx.IMAGE_QUALITY_NEAREST|简单最快的|
+|wx.IMAGE_QUALITY_BLINEAR|前后两个的折中|
+|wx.IMAGE_QUALITY_BICUBIC|最高质量，最低运行速度|
+|wx.IMAGE_QUALITY_BOX_AVERAGE|周围的像素取平均值|
+|wx.IMAGE_QUALITY_NORAML|默认的算法|
+|wx.IMAGE_QUALITY_HIGH|最佳的算法|
+
+
+#### 裁剪
+
+`Paste` `GetSubImage`
+
+#### 旋转
+
+`Rotate`
+
+### 色彩处理
+
+`Replace` 
+
 ### 像素处理
 
 `monochrome`:单
@@ -302,20 +334,71 @@ flag有两种，一种是决定border的应用的地方，另一种是当Sizer�
 
     Add(self, item, proportion, flag, border, userData)
 
+proportion 是BoxSizer排列方向上的比例，默认是0，意味着用该方向上的最小宽度（高度）。
+
+flag：wx.EXPAND是指定在BoxSizer的反方向上扩展,占据全部空间。
+
+### 使用AddMany添加 空白空间 间隙
+
+    Sizer.AddMany([(width, height, flag)])
+
+#### Sizer动态添加，删除项目
+
+`Clear` `Remove` `Detach`
+
 ### GridSizer
+
+表格的每一格都是同样的高、宽。宽高都有最高的一个包含物决定。
 
 ### StaticBoxSizer
 
+比BoxSizer多一个边框。
+
 ### FlexGridSizer
+
+以表格的方式排列，只要求同一行的格子有相同的高，同一的有相同的宽。
 
 ### GridBagSizer
 
+大致和FlexGridSizer差不多，可以在Sizer的指定位置放置控件。一个控件可以占据一行（列）或者多行（列）空间
+
+    Add(window, pos, span=wx.DefaultSpan, flag=0, border=0, userData=None)
+    pos=(row, col)
+
 ### WrapSizer
 
+动态调整内容的排列，
 
 ### PySizer
 
 ## panel 动态更新
+
+问题：
+
+使用SetSizer后再调用`Add(item)`和 `sizer.Layout()`显示不正常？
+
+场景：
+
+    class Panel(wx.Panel):
+        def __init__(self, parent):
+            super(Panel, self).__init__(parent)
+
+            self.sizer = wx.BoxSizer()
+            self.SetSizer(self.sizer)
+            
+            self.DynamicUpdate()
+        
+        def DynamicUpdate(self):
+            control = wx.StaticText(self, label=u"长文本")
+            self.sizer.Add(control, 0, wx.EXPAND)
+            self.Layout()
+
+解决办法：
+
+    self.sizer.Layout()
+    self.GetParent().Layout()
+
+为什么？：
 
 
 ## ToggleButton 开关按钮
@@ -393,7 +476,12 @@ Skip: 继续传播
         sizer.Fit(self)
 ```
 - 消除闪烁？
-
+```python
+    self.st.Freeze() 
+    self.st.SetLabel(self._label) 
+    self.st.Wrap(self.GetSize().width) 
+    self.st.Thaw()
+```
 
 新知识：
 
@@ -466,6 +554,10 @@ DisableDragGridSize() # 禁止在网格区缩放表格
 DisableDragRowSize()  # 禁止在行标题区拉伸表格
 DisableDragColSize()  # 禁止在列标题区拉伸网格
 
+### 表格大小设定
+
+SetColSize SetRowSize SetDefaultRowSize(height) SetDefaultColSize(width)
+
 ### 多选
 
 #### 自己实现
@@ -499,3 +591,53 @@ wx.grid.EVT_GRID_SELECT_CELL
 来源：<a href="http://wxpython.org/Phoenix/docs/html/grid.Grid.html#grid.Grid">官方文档 grid.Grid</a>&emsp;
 <a href="http://wxpython.org/Phoenix/docs/html/grid_overview.html#grid-overview">grid_overview</a>&emsp;
 <a href="http://wxpython.org/Phoenix/docs/html/grid.GridEvent.html#grid.GridEvent">GridEvent</a>
+
+## wx.ListCtrl
+
+    InsertStringItem(row, "") # 添加空行
+    SetStringItem(row, col, label)
+
+
+## wx.ToolBar
+
+`AddControl` `AddTool` `AddLabelTool` `AddSeparator` `AddRadioTool` `AddSimpleTool` `AddStretchableSpace` `AddTool` `InsertControl`  `InsertTool` `InsertSimpleTool` `InsertLabelTool`  `InsertStretchableSpace` 
+
+`Realize` 
+
+`RemoveTool`
+
+`SetDropdownMenu` `SetMargins` `SetToolLongHelp` `SetToolShortHelp` `SetToolSeparation` `ToggleTool`
+
+<a href="http://wxpython.org/Phoenix/docs/html/ToolBar.html#toolbar" target="blank"> 官方文档：toolbar</a>
+
+## wx.lib.stattext.GenStaticText
+
+<a href="http://wxpython.org/Phoenix/docs/html/lib.stattext.GenStaticText.html#lib.stattext.GenStaticText">官方文档：GenStaticText</a>
+
+### MouseEvent
+
+<a href="http://wxpython.org/Phoenix/docs/html/MouseEvent.html">官方文档：MouseEvent</a>
+
+## 按钮可以透明吗？
+
+不可以
+
+## 对话框 Dialog
+
+ShowModal Destroy ShowWindowModal EndModal SetIcon Centre SetDefault
+
+怎么工作？
+
+### style 
+
+CAPTION DEFAULT_DIALOG_STYLE RESIZER_BORDER SYSTEM_MENU CLOSE_BOX MAXIMIZE_BOX
+MINIMIZE_BOX THICK_FRAME STAY_ON_TOP NO_3D DIALOG_NO_PARENT DIALOG_EX_CONTEXTHELP DIALOG_EX_METAL
+
+## TextCtrl
+
+    SetValue GetValue  SetFocus
+
+
+## 其他
+
+    CenterOnParent
