@@ -13,10 +13,18 @@ class PhysicalClient(object):
 
     def __init__(self, session):
         self.url = "http://tyxk.dgut.edu.cn/index.php"
-        self.ajax_header = {"X-Requested-With": "XMLHttpRequest"}
         self.s = session
+        self.ajax = session
+        self.ajax.headers["X-Requested-With"] = "XMLHttpRequest"
         self.dirty_course_list = []
         self.clean_course_list = []
+        self.dirty_able_list = []
+        self.clean_able_list = []
+        self.selected_list = []
+        self.user_info = {}
+        self.announcement = None
+        self.score_list = []
+        self.course_result = None
 
     def get_all_course(self):
         u"""下载全校课程数据，保存成一个列表"""
@@ -33,20 +41,125 @@ class PhysicalClient(object):
             self.dirty_course_list.append(page)
         return None
 
-    def get_able_course(self):
-        pass
+    def get_able_course(self, page_index):
+        params = {"m": "",
+                  "c": "Student",
+                  "a": "ableCourseList",
+                  "p": page_index}
+        res = self.ajax.get(self.url, params=params)
+        res_json = res.json()
+        if res_json["mes"] == False:
+            # 非选课时间或者处于免修状态
+            return False
+        elif res_json["course"] == None:
+            # 检索内容为空
+            return None
+        elif res:
+            # 页数
+            # 下载
+            return None
+
+    def get_selected(self):
+        params = {"c": "Student",
+                  "m": "",
+                  "a": "selectedCourseList"}
+        res = self.ajax.get(self.url, params=params,)
+        res_json = res.json()
+        if res_json["mes"] == False:
+            return False
+        elif res_json["course"] == None:
+            return None
+        else:
+            pass
 
     def get_result(self):
-        pass
+        u"""包含老师信息"""
+        params = {"c": "Student",
+                  "m": "",
+                  "a": "selectCourseResult"}
+        res = self.ajax.get(self.url, params=params)
+        res_json = res.json()
+        if res_json == []:
+            # No Related Information
+            return None
+        else:
+            self.course_result = res_json
+            return res_json
 
     def select(self, course_id):
-        pass
+        params = {"m": "",
+                  "c": "Student",
+                  "a": "courseSelect"}
+        data = {"method": "sel",
+                "course_id": course_id}
+        while True:
+            try:
+                res = self.ajax.post(self.url, params=params,
+                                     data=data, timeout=2,)
+                print res.text
+                if res.status_code == 500:
+                    pass
+                else:
+                    return None
+            except requests.exceptions.Timeout:
+                pass
 
     def unselect(self, course_id):
+        params = {"m": "",
+                  "c": "Student",
+                  "a": "courseSelect"}
+        data = {"method": "quit",
+                "course_id": course_id}
+        res = self.ajax.post(url, params=params, data=data,)
+        print res.text
+        return None
+
+    def get_user_info(self):
+        params = {"m": "Home",
+                  "c": "Student",
+                  "a": "index"}
+        res = self.s.get(self.url, params=params)
+        soup = BeautifulSoup(res.text)
+        # 个人信息
+        student_info = soup.find_all(attrs={"id": "studentInfo"})[0]
+        trs = student_info.find_all("tr")
+        for tr in trs:
+            tds = tr.find_all("td")
+            key = tds[0].string.strip()
+            value = tds[1].string.strip()
+            self.user_info[key] = value
+        # 体测 期末 成绩
+        score = soup.find_all(attrs={"id": "checkScore"})[0]
+        trs = score.tbody.find_all("tr")
+        for tr in trs:
+            tds = tr.find_all("td")
+            _dict = {}
+            _dict[u"school_year"] = tds[0].string.strip()
+            _dict[u"school_term"] = tds[1].string.strip()
+            _dict[u"fitness"] = tds[2].string.strip()
+            _dict[u"fitness_judge"] = tds[3].string.strip()
+            _dict[u"final_score"] = tds[4].string.strip()
+            self.score_list.append(_dict)
+        # 管理员公告
+        div = soup.find_all(attrs={"id": "studentAd"})[0]
+        self.announcement = div.div.div.string.strip()
+        return None
+
+    def get_score(self):
         pass
 
+    @property
+    def get_announcement(self):
+
+        return self.announcement
+
     def logout(self):
-        pass
+        params = {"m": "",
+                  "c": "Index",
+                  "a": "user_exit"}
+        res = self.s.get(self.url, params=params)
+        if res.status_code == 200:
+            return None
 
     def _get_single_page(self, page_index):
         u"""
@@ -58,8 +171,8 @@ class PhysicalClient(object):
                   "p": page_index}
         while True:
             try:
-                res = self.s.get(self.url, params=params,
-                                 timeout=4, headers=self.ajax_header)
+                res = self.ajax.get(self.url, params=params,
+                                    timeout=4)
                 res_json = res.json()
                 if res_json["allCourse"] is None:
                     return None
@@ -106,8 +219,9 @@ class PhysicalClient(object):
                 self.clean_course_list.append(course)
 
 
-for index, dirty in enumerate(tyxk.dirty_course_list):
-    course_list = dirty["allCourse"]
-    for course in course_list:
-        course["page"] = index
-        tyxk.clean_course_list.append(course)
+def s(username, password, course_id_list):
+    cas = auth.DgutCas(username, password)
+    session = cas.tyxk()
+    client = PhysicalClient(session)
+    for id in course_id_list:
+        client.select(id)

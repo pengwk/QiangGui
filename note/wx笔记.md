@@ -637,7 +637,28 @@ MINIMIZE_BOX THICK_FRAME STAY_ON_TOP NO_3D DIALOG_NO_PARENT DIALOG_EX_CONTEXTHEL
 
     SetValue GetValue  SetFocus
 
+## 从零开始画一个Widget
+
+## 设备上下文是什么意思？
+
+## icon 应该怎样制作？
+
+## 程序如何打包发布？
+
+### 如何定义程序的各种属性？
+
+
+## 自动升级怎么实现？
+
+
+## 保护源代码？反汇编该怎么做？
+
+
+
+## 最小化到托盘？
+
 
 ## 其他
 
     CenterOnParent
+

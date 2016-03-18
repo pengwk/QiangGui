@@ -439,8 +439,9 @@ class DgutCas(object):
         while True:
             try:
                 get = session.get(url, timeout=6)
-            
-                if len(session.cookies) == 1:
+                if get.status_code == 500:
+                    pass
+                else:
                     return session
             except requests.exceptions.Timeout:
                 pass

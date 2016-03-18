@@ -29,3 +29,37 @@ class MetaClass():
 \023  19  DC3  \x13  ^S    (Device control 3) (XOFF)  (Default UNIX STOP char.)
 
 加上r就好了。 出错的前一行很重要！
+
+## json python object map
+
+|json|python|
+|---|---|
+|null|None|
+|false|False|
+|true|True|
+|string|unicode|
+|array|list|
+|object|dict|
+|number(int)|int long|
+|number(real)|float|
+
+
+## 网络编程 服务器跪了的情况
+
+status code 
+
+### requests 
+    
+    res.
+    ok status_code raise_for_status elapsed encoding apparent_encoding close connection is_redirect history links json raw content reason text cookies headers
+
+获取请求的内容
+
+    res.request.
+    body url headers method path_url  
+
+### 想法
+
+- 不设置超时。
+
+使用 多线程 或者 协程同一个请求发起多次，直到得到正常反馈就停止其他请求。服务器错误就继续。
