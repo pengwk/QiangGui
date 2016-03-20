@@ -358,6 +358,7 @@ class NICZY(object):
     def logout(self):
         pass
 
+apps_home = {u"tyxk": ""}
 
 class DgutCas(object):
     """docstring for ClassName"""
@@ -367,10 +368,10 @@ class DgutCas(object):
         self._username = username
         self._password = password
 
-    def cas(self, appid):
+    def cas(self, appid, account=None):
         u"""
         :param appid: string for example "tyxk" 
-        :return: raise ValueError if given a wrong password else return location url
+        :return: raise PasswordError if given a wrong password else return location url
         """
 
         url = "https://cas.dgut.edu.cn"
@@ -379,10 +380,16 @@ class DgutCas(object):
         params = {"ReturnUrl": return_url,
                   "appid": appid}
 
-        data = {"UserName": self._username,
-                "Password": self._password,
-                "ReturnUrl": return_url,
-                }
+        if account is not None:        
+            data = {"UserName": account[0],
+                    "Password": accosunt[1],
+                    "ReturnUrl": return_url,
+                    }
+        else:
+            data = {"UserName": self._username,
+                    "Password": self._password,
+                    "ReturnUrl": return_url,
+                    }
 
         session = requests.Session()
         session.headers["User-Agent"] = UserAgent
@@ -400,7 +407,7 @@ class DgutCas(object):
 
         if post.status_code == 200:
             # 判断密码错误
-            raise ValueError("wrong password error")
+            raise PasswordError("wrong password error")
         elif post.status_code == 302:
             location = session.get(url + return_url, allow_redirects=False)
             return location.headers["location"]
@@ -414,55 +421,48 @@ class DgutCas(object):
         element = soup.find_all(attrs={"name": token_name})[0]
         return element["value"]
 
-    def niczy(self, ):
-        pass
-
-    def tyxk(self, ):
+    def app_session(self, appid):
+        urls = {"tyxk": "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login",
+                "niczy": "http://niczy.dgut.edu.cn/"
+                }
         session = requests.Session()
         session.headers["User-Agent"] = UserAgent
         session.verify = False
-        # 获取cookie php
-        tyxk_home = "http://tyxk.dgut.edu.cn/index.php?m=&c=Index&a=login"
+        no_pre_cookie = ("niczy", )
+        if appid in no_pre_cookie:
+            return session
         while True:
             try:
-                home = session.get(tyxk_home, timeout=6)
-                if len(home.cookies) == 1:
-                    break
-            except requests.exceptions.Timeout:
-                pass
-
-        try:
-            url = self.cas("tyxk")
-        except ValueError:
-            raise
-        
-        while True:
-            try:
-                get = session.get(url, timeout=6)
-                if get.status_code == 500:
-                    pass
-                else:
+                home = session.get(urls[appid], timeout=6)
+                if len(home.cookies) >= 1:
                     return session
+                else:
+                    pass
             except requests.exceptions.Timeout:
                 pass
 
-    def jwxt(self, ):
-        pass
+    def auth(self, appid, account=None):
+        u"""
+        :param account: a tuple eg. account = (username, password)
+        """
+        support_appids = ("tyxk", "niczy",)
+        if appid not in support_appids:
+            raise NotImplementedError(appid)
+        session = self.app_session(appid)
+        token_url = self.cas(appid, account)
+        session.get(token_url)
+        return session
 
-    def self_(self, ):
-        pass
 
-    def my(self, ):
-        pass
+class AuthError(Exception):
+    pass
 
-    def yktcx(self, ):
-        pass
+class NotImplementedError(AuthError):
+    u"""各种没有实现的功能"""
+    pass
 
-    def wlbx(self, ):
-        pass
+class PasswordError(AuthError):
+    u"""账户或者密码错误"""
+    pass
 
-def test():
-    # import auth
-    cas = auth.DgutCas("201441302623", "pwkilove5")
-    tyxk = cas.cas("tyxk")
 
