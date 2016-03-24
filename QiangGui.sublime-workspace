@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"down",
+				"downloaded"
+			],
+			[
+				"User",
+				"UserAgent"
+			],
+			[
 				"course",
 				"course_result"
 			],
@@ -38,10 +46,6 @@
 			[
 				"U",
 				"UserAgent"
-			],
-			[
-				"User",
-				"User-Agent"
 			],
 			[
 				"Ch",
@@ -510,10 +514,6 @@
 			[
 				"Tur",
 				"swampy.TurtleWorld"
-			],
-			[
-				"t",
-				"thead	Tag"
 			]
 		]
 	},
@@ -528,18 +528,21 @@
 			}
 		},
 		{
-			"file": "clients.py",
+			"contents": "# Python\n\n## metaclass dynamic generate class\n\nexample:\n```python\ndef a_function():\n    pass\n\nclass MetaClass():\n    __metaclass__ = a_function\n\n    pass\n```\n\n## 路径名包含特殊字符 \\x13\n\n无解\n\n    output_dir = \"C:\\Users\\wk\\OneDrive\\W\\QiangGui\\img\\23\"\n    \n    IOError: [Errno 22] invalid mode ('wb') or filename: u'C:\\\\Users\\\\wk\\\\OneDrive\\\\W\\\\QiangGui\\\\img\\x13\\\\\\u9648\\u8fdb.jpg'\n\n字符\\x10和\\x13，或者说ASCII 10和13，\\n \\r\n\n#### 结果\n\n错误信息不注意，是保存的时候除出了问题，而不是打开的时候 \\23 \n\\023  19  DC3  \\x13  ^S    (Device control 3) (XOFF)  (Default UNIX STOP char.)\n\n加上r就好了。 出错的前一行很重要！\n\n## json python object map\n\n|json|python|\n|---|---|\n|null|None|\n|false|False|\n|true|True|\n|string|unicode|\n|array|list|\n|object|dict|\n|number(int)|int long|\n|number(real)|float|\n\n\n## 网络编程 服务器跪了的情况\n\nstatus code \n\n### requests \n    \n    res.\n    ok status_code raise_for_status elapsed encoding apparent_encoding close connection is_redirect history links json raw content reason text cookies headers\n\n获取请求的内容\n\n    res.request.\n    body url headers method path_url  \n\n### iter_content(chunk_size=1)\n\n默认的chunk_size只有1 byte； 1MB = 1024 * 1024 * 1 Byte\n\n### 想法\n\n- 不设置超时。\n\n使用 多线程 或者 协程同一个请求发起多次，直到得到正常反馈就停止其他请求。服务器错误就继续。\n\n## 大文件内存、断电保护\n\n    file.flush() # 清除内部缓冲区 internal buffer\n    os.fsync()   # 清除 operating system buffer 把文件写到磁盘上\n\n## 下载\n\n\n### 文件大小\n\n    bytes = res.headers[\"Content-Length\"] \n\n### 网速\n\nbyte/time\n\n    KB = 1024Byte \n    KB/s\n\nMbps MB \n\nbits per second \n\nKiB KB\n\nbit binary digit\n\n\n### 下载进度\n\n\n\n### 断点下载 多线程、进程 下载同一文件 \n\n\n\n### 文件合并\n\n### 单位换算\n\nbyte bit kb mb gb \n\n\n## multiprocessing \n\n### 共享变量数据结构\n\nValue(type, initial_value)\n\n    from multiprocessing import Value\n\n    s = Value(\"i\", 0)\n    print s.value\n\n|typecode|python|\n|----|-----|\n|i|int|\n|u|unicode|\n|d|double|\n|f|float|\n\nArray(typecode, )\n\n### 终止进程\n\n    process.terminate()\n\n\n### 打包支持\n\n    multiprocessing.freeze_support()\n\n### CPU个数\n\n    multiprocessing.cpu_count()\n\n## ?\n\n    sys.stdout.write()\n    sys.stdout.flush()",
+			"file": "note/python笔记.md",
+			"file_size": 2471,
+			"file_write_time": 131032803520495376,
 			"settings":
 			{
-				"buffer_size": 6873,
+				"buffer_size": 1936,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "note/python笔记.md",
+			"file": "auth.py",
 			"settings":
 			{
-				"buffer_size": 1079,
+				"buffer_size": 17401,
 				"line_ending": "Windows"
 			}
 		},
@@ -548,14 +551,6 @@
 			"settings":
 			{
 				"buffer_size": 14000,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "auth.py",
-			"settings":
-			{
-				"buffer_size": 17044,
 				"line_ending": "Windows"
 			}
 		}
@@ -935,6 +930,12 @@
 	],
 	"file_history":
 	[
+		"/C/Users/wk/OneDrive/W/QiangGui/clients.py",
+		"/E/temp/log.txt",
+		"/E/temp/download.txt",
+		"/C/Users/wk/Downloads/jquery.speedtest.min.js",
+		"/C/Users/wk/OneDrive/W/QiangGui/sb.mp4",
+		"/C/Users/wk/OneDrive/W/QiangGui/hello.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/teachers_info.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/dirty_course_list.json",
 		"/C/Users/wk/Desktop/31_.htm",
@@ -1056,13 +1057,7 @@
 		"/C/Users/wk/Documents/WindowsPowerShell/solarized-dark.reg",
 		"/C/Users/wk/Documents/WindowsPowerShell/a.reg",
 		"/C/Users/wk/OneDrive/W/Raspberry/启动级别.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/硬件.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/基本操作.md",
-		"/C/Users/wk/Desktop/课程表.PNG",
-		"/C/Users/wk/OneDrive/W/Raspberry/rpibook.sublime-project",
-		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/init/mounted-proc.conf",
-		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/resolv.conf",
-		"/C/Users/wk/OneDrive/W/Raspberry/system/etc/rsyslog.conf"
+		"/C/Users/wk/OneDrive/W/Raspberry/硬件.md"
 	],
 	"find":
 	{
@@ -1171,8 +1166,8 @@
 						"selection":
 						[
 							[
-								2252,
-								2252
+								1766,
+								1766
 							]
 						],
 						"settings":
@@ -1182,7 +1177,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2028.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1190,49 +1185,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "clients.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1495,
-								1495
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "note/python笔记.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1079,
+						"buffer_size": 1936,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								758,
-								758
+								1275,
+								1275
 							]
 						],
 						"settings":
@@ -1242,10 +1207,41 @@
 							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1263.0,
+						"translation.y": 2352.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "auth.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16318,
+								16318
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 476.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1274,8 +1270,8 @@
 						"selection":
 						[
 							[
-								13978,
-								13978
+								13902,
+								13902
 							]
 						],
 						"settings":
@@ -1291,38 +1287,7 @@
 						"translation.y": 21987.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "auth.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17044,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								312,
-								312
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

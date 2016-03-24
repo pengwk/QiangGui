@@ -58,8 +58,85 @@ status code
     res.request.
     body url headers method path_url  
 
+### iter_content(chunk_size=1)
+
+默认的chunk_size只有1 byte； 1MB = 1024 * 1024 * 1 Byte
+
 ### 想法
 
 - 不设置超时。
 
 使用 多线程 或者 协程同一个请求发起多次，直到得到正常反馈就停止其他请求。服务器错误就继续。
+
+## 大文件内存、断电保护
+
+    file.flush() # 清除内部缓冲区 internal buffer
+    os.fsync()   # 清除 operating system buffer 把文件写到磁盘上
+
+## 下载
+
+
+### 文件大小
+
+    bytes = res.headers["Content-Length"] 
+
+### 网速
+
+byte/time
+
+    KB = 1024Byte 
+    KB/s
+
+
+### 下载进度
+
+
+
+### 断点下载 多线程、进程 下载同一文件 
+
+
+
+### 文件合并
+
+### 单位换算
+
+byte bit kb mb gb 
+
+
+## multiprocessing 
+
+### 共享变量数据结构
+
+Value(type, initial_value)
+
+    from multiprocessing import Value
+
+    s = Value("i", 0)
+    print s.value
+
+|typecode|python|
+|----|-----|
+|i|int|
+|u|unicode|
+|d|double|
+|f|float|
+
+Array(typecode, )
+
+### 终止进程
+
+    process.terminate()
+
+
+### 打包支持
+
+    multiprocessing.freeze_support()
+
+### CPU个数
+
+    multiprocessing.cpu_count()
+
+## ?
+
+    sys.stdout.write()
+    sys.stdout.flush()

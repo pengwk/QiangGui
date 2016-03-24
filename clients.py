@@ -1,6 +1,8 @@
 # _*_ coding:utf-8 _*_
 
 import json
+import os
+import time
 
 import requests
 from bs4 import BeautifulSoup
@@ -225,3 +227,80 @@ def s(username, password, course_id_list):
     client = PhysicalClient(session)
     for id in course_id_list:
         client.select(id)
+
+
+class Niczy(object):
+    u""""""
+
+    def __init__(self, session):
+        super(Niczy, self).__init__()
+        self.s = session
+        self.ajax = session
+        self.ajax.headers["X-Requested-With"] = "XMLHttpRequest"
+        self.home = "http://niczy.dgut.edu.cn"
+
+    def logout(self,):
+        url = self.home + "/sso/logout.php"
+        res = self.s.get(url)
+        return res
+
+    def get_download_url(self, browser_url):
+        res = self.s.get(browser_url)
+        soup = BeautifulSoup(res.text, "lxml")
+        h2 = soup.find_all(attrs={"class": "carouselTitle"})[0]
+        onclick = h2.a["onclick"]
+        url = onclick.split("'")[1]
+        download_url = "".join([url, "_yq.mp4"])
+        return download_url
+
+    def download(self, url, filename, size=None, speed=None, total=None, done=None):
+        u"""
+        :params :size multiprocessing Value
+        """
+        video = self.s.get(url, stream=True, headers={"Range": "bytes=0-"})
+        content_length = video.headers["Content-Length"]
+        size.value = int(content_length)
+        start = time.clock()
+        downloaded = 0
+        log = open("E:\\temp\log.txt", "w")
+
+        with open(filename, "wb") as f:
+            per_start = time.clock()
+            for chunk in video.iter_content(1024):
+                per_end = time.clock()
+                downloaded += 1024
+                done.value = float(downloaded) / float(content_length)
+                f.write(chunk)
+                duration = per_end - per_start
+                speed.value = 1 / duration
+                per_start = time.clock()
+                line = "per_end: {} per_start: {} duration: {} done: {} speed: {}\n".format(per_end, per_start, duration, done.value, speed.value)
+                log.write(line)
+        log.close()
+        total.value = int(time.clock() - start)
+        return None
+
+from multiprocessing import Process, Value
+
+if __name__ == "__main__":
+    size = Value("i", 0)
+    speed = Value("f", 0.0)
+    total = Value("i", 0)
+    done = Value("f", 0.0)
+    url = u"""http://niczy.dgut.edu.cn:1680/course_def/res_url/L21lZGlhL2d1YW5mdS9pc2FkbWluL3h1ZWtlMS8yMS8yMDE2LzAzLTExL+m6u+ecgTogSzEy6Laj5ZGz6K++56iL77ya55S15a2mLw==@/Arduino%E7%94%B5%E8%B7%AF%E5%85%A5%E9%97%A8.flv_yq.mp4"""
+    filename = "E:\\temp\\test.mp4"
+    niczy = Niczy(requests.Session())
+    p = Process(target=niczy.download, args=(
+        url, filename, size, speed, total, done))
+    p.start()
+    with open("E:\\temp\download.txt", "w") as f:
+        while p.is_alive():
+            line = "Size:{}MB Speed: {} Done: {}% \n".format(
+                size.value / 1024 / 1024, speed.value, done.value)
+            print done.value
+            f.writelines(line)
+            time.sleep(0.2)
+        line = "Size:{}MB Speed: {} Done: {}%  Total: {}\n".format(
+            size.value / 1024 / 1024, speed.value, str(done.value), total.value)
+        f.write(line)
+    p.join()
