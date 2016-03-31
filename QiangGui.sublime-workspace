@@ -539,6 +539,14 @@
 			}
 		},
 		{
+			"file": "clients.py",
+			"settings":
+			{
+				"buffer_size": 9822,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "auth.py",
 			"settings":
 			{
@@ -930,9 +938,9 @@
 	],
 	"file_history":
 	[
-		"/C/Users/wk/OneDrive/W/QiangGui/clients.py",
 		"/E/temp/log.txt",
 		"/E/temp/download.txt",
+		"/C/Users/wk/OneDrive/W/QiangGui/clients.py",
 		"/C/Users/wk/Downloads/jquery.speedtest.min.js",
 		"/C/Users/wk/OneDrive/W/QiangGui/sb.mp4",
 		"/C/Users/wk/OneDrive/W/QiangGui/hello.py",
@@ -1150,7 +1158,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1166,8 +1174,8 @@
 						"selection":
 						[
 							[
-								1766,
-								1766
+								822,
+								822
 							]
 						],
 						"settings":
@@ -1180,7 +1188,7 @@
 						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1196,8 +1204,8 @@
 						"selection":
 						[
 							[
-								1275,
-								1275
+								1346,
+								1346
 							]
 						],
 						"settings":
@@ -1207,7 +1215,7 @@
 							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2352.0,
+						"translation.y": 3639.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1215,6 +1223,37 @@
 				},
 				{
 					"buffer": 2,
+					"file": "clients.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6415,
+								6415
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5305.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "auth.py",
 					"semi_transient": false,
 					"settings":
@@ -1226,8 +1265,8 @@
 						"selection":
 						[
 							[
-								16318,
-								16318
+								863,
+								863
 							]
 						],
 						"settings":
@@ -1238,14 +1277,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 476.0,
+						"translation.y": 11382.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "note/wx笔记.md",
 					"semi_transient": false,
 					"settings":
@@ -1270,8 +1309,8 @@
 						"selection":
 						[
 							[
-								13902,
-								13902
+								13903,
+								13903
 							]
 						],
 						"settings":
@@ -1284,7 +1323,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 21987.0,
+						"translation.y": 21690.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,

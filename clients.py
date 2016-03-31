@@ -280,6 +280,29 @@ class Niczy(object):
         total.value = int(time.clock() - start)
         return None
 
+    def get_info(self, url):
+        res = self.s.get(url, )
+        soup = BeautifulSoup(res.text, "lxml")
+        # 名称 系列 图片 关键字
+        _dict = {}
+        p_b_span = []
+        #series = soup.find_all(attrs={"id": "carousel"})[0] # ul
+
+        lecture_info = soup.find_all(attrs={"class": "lectureInfo"})[0]
+        _dict[u"img_url"] = lecture_info.img["src"]
+        p_b_span.extend(lecture_info.find_all("p"))
+
+        video_info = soup.find_all(attrs={"class": "videoInfo_con"})[0]
+        video_p = video_info.find_all("p")
+        p_b_span.extend(video_p[:-1])
+        name = video_p[-1].string
+        _dict[name[0:3]] = name[3:] # u"名称：纸牌屋第3季02"
+
+        for p in p_b_span:
+            _dict[p.b.string] = p.span.string
+
+        return _dict
+
 from multiprocessing import Process, Value
 
 if __name__ == "__main__":
