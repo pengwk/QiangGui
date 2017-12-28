@@ -657,6 +657,267 @@ MINIMIZE_BOX THICK_FRAME STAY_ON_TOP NO_3D DIALOG_NO_PARENT DIALOG_EX_CONTEXTHEL
 
 ## 最小化到托盘？
 
+## Gauge 进度条
+
+### 初始化 init
+
+    wx.Gauge(parent, id=wx.ID_ANY, range=100, pos=wx.DefaultPosition,
+            size=wx.DefaultSize, style=wx.GA_HORIZONTAL,
+            validator=wx.DefaultValidator,
+            name=GaugeNameStr)
+
+### mode 两种模式
+
+- determinate
+- indeterminate Pulse
+
+### 常用方法
+
+    GetValue() SetValue() Pulse() SetRange() GetRange()
+
+
+
+### style
+
+- `GA_HORIZONTAL` 水平
+- `GA_VERTICAL` 垂直
+- `GA_SMOOTH`: one pixel width one update
+
+### Thread Process Update
+
+
+
+### 扩展阅读
+
+- <a href="http://www.blog.pythonlibrary.org/2013/09/04/wxpython-how-to-update-a-progress-bar-from-a-thread/" target="_blank">wxpython-how-to-update-a-progress-bar-from-a-thread/</a>
+- <a href="http://wxpython.org/Phoenix/docs/html/Gauge.html">Gauge</a>
+
+
+## FileDialog 
+
+    wildcard = "Python source (*.py)|*.py|"     \
+           "Compiled Python (*.pyc)|*.pyc|" \
+           "SPAM files (*.spam)|*.spam|"    \
+           "Egg file (*.egg)|*.egg|"        \
+           "All files (*.*)|*.*"
+    
+    style = wx.OPEN| wx.CHANGE_DIR| wx.MULTIPLE # wx.OPEN wx.SAVE
+
+    dlg = wx.FileDialog(self, message=u"存放于", 
+                            defaultDir=os.getcwd(),
+                            defaultFile="",
+                            wildcard=wildcard,
+                            style=style)
+    
+    dlg.SetFilter
+    list_ = dlg.GetPaths() # dlg.GetPath()
+
+## tempfile 临时文件
+
+
+## 如何保持同一个Sizer里，非Sizer方向的长度相同？
+
+- 固定宽度
+- wx.EXPAND
+
+## wx.Font 字体
+
+### 初始化
+
+    wx.Font(pointSize, family, style, weight, underline=False, faceName="", encoding=wx.FONTENCODING_DEFAULT)
+
+### 概览
+
+    font = wx.Font(18, wx.ROMAN, wx.ITALIC, wx.LIGHT)
+
+    text = wx.StaticText(parent, label=u"你好")
+    text.SetFont(font)
+
+### family
+
+1. DEFAULT
+2. DECORATIVE 装潢
+3. ROMAN 罗马
+4. SCRIPT 手写体
+5. SWISS 瑞士
+6. MODERN 现代
+
+### style
+
+1. NORMAL
+2. SLANT 倾斜
+3. ITALIC 斜体
+
+### weight
+
+1. NORMAL
+2. LIGHT 细体
+3. BOLD 粗体
+
+### 缩放
+
+
+
+
+### 相关阅读
+
+#### 官方文档
+
+1. <a href="http://wxpython.org/Phoenix/docs/html/font_overview.html#font-overview" target="_blank">font overview</a>
+2. <a href="http://wxpython.org/Phoenix/docs/html/Font.html" target="_blank">font</a>
+3. 
+
+#### 博文、问答……
+
+1. <a href="http://stackoverflow.com/questions/5201817/wxpython-statictext-widget-font">Font and StaticText</a>
+2. <a href="http://cdc.tencent.com/?p=8565" target="_blank">腾讯CDC：给自己的字体课</a>
+3. <a href="https://zh.wikipedia.org/wiki/Font_family_(HTML)" target="_blank">Font_family_(HTML)</a>
+
+
+## 跨平台打开一个文件夹
+
+
+## 操作剪切板
+
+## wx.MessageDialog
+
+### 初始化
+
+    wx.MessageDialog(parent, message, caption, style, pos)
+
+### style
+
+1. OK
+2. CANCEL
+3. YES_NO
+4. HELP
+5. NO_DEFAULT
+6. CANCEL_DEFAULT
+7. YES_DEFAULT
+8. OK_DEFAULT
+
+#### Icon
+
+1. ICON_NONE
+2. ICON_EXCLAMATION
+3. ICON_ERROR
+4. ICON_HAND
+5. ICON_QUESTION
+6. ICON_INFORMATION
+7. ICON_AUTH_NEED
+
+1. STAY_ON_TOP
+2. CENTER
+
+
+### 拓展资料
+
+#### 官方、百科资料
+
+1. <a href="http://wxpython.org/Phoenix/docs/html/MessageDialog.html">Phoenix: MessageDialog</a>
+2. <a href="http://wxpython.org/Phoenix/docs/html/common_dialogs_overview.html#messagedialog-overview">Phoenix: messagedialog-overview</a>
+
+## 直接下载的图像不保存在磁盘怎么显示？
+
+
+
+## wx.Sound
+
+### 初始化
+
+    sound = wx.Sound(filename) #.wav
+
+### Play 播放
+
+    flag = wx.SOUND_ASYNC # wx.SOUND_SYNC  wx.SOUND_LOOP|wx.SOUND_ASYNC
+    sound.Play(flag)
+
+### 兼容性
+
+Unix、Windows
+
+### 拓展资料
+
+#### 官方、百科
+
+1. <a href="http://wxpython.org/Phoenix/docs/html/adv.Sound.html">Phoenix: adv.Sound</a>
+
+
+## wx.CallAfter
+
+## wxpython Thread Process No Block Gui LongRunTask Event
+
+### 拓展资料、来源
+
+#### 官方、百科
+
+1. <a href="http://wiki.wxpython.org/LongRunningTasks">wiki: LongRunningTasks</a>
+2. <a href="http://wiki.wxpython.org/MultiProcessing">wiki: MultiProcessing</a>
+3. <a href="http://wxpython.org/Phoenix/docs/html/Process.html">Phoenix: Process</a>
+4. <a href="http://wiki.wxpython.org/CallAfter">wiki: CallAfter</a>
+5. <a href="http://wxpython.org/Phoenix/docs/html/functions.html#CallAfter">Phoenix: CallAfter</a>
+
+#### 博客
+
+1. <a href="http://www.blog.pythonlibrary.org/2010/05/22/wxpython-and-threads/">wxpython and threads</a>
+
+## 响铃 Bell
+
+
+## Timer
+
+
+### 拓展资料、来源
+
+#### 官方、百科
+
+1. <a href="http://wxpython.org/Phoenix/docs/html/CallLater.html#CallLater">Phoenix: CallLater</a>
+2. 
+
+## GDI
+
+## 电源
+
+### 
+
+    wx.GetPowerType()
+
+
+## 屏幕显示 PPI
+
+## 打包
+
+### 工具 PyInstaller
+
+### 来源 拓展资料
+
+#### 版本
+
+#### 图标
+
+#### 压缩
+
+#### 加密 反汇编
+
+Encrypting Python Bytecode
+
+#### 官方网站
+
+1. <a href="http://www.pyinstaller.org/">PyInstaller</a>
+
+
+## 鼠标
+
+### 拓展资料、来源
+
+## 官方
+
+<a href="http://wxpython.org/Phoenix/docs/html/MouseEvent.html" target="_blank">官方：MouseEvent</a>
+
+## 动态更新
+
+- Refresh 控件级
+- Layout 容器级
 
 ## 其他
 

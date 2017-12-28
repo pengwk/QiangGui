@@ -79,8 +79,10 @@ class LoginDialog(wx.Dialog):
         self.SetSizer(sizer)
         self.SetInitialSize()
         self.Bind(wx.EVT_CLOSE,self.OnClose)
+        
     def OnClose(self,event):
         self.EndModal(-1)
+
     def GetUsername(self):
         return self.panel.GetUsername()
 

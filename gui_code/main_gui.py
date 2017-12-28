@@ -335,7 +335,7 @@ class CourseSelectPanel(wx.Panel):
 
         course_list = [u"篮球.jpg", u"健美.jpg", u"健身.jpg", u"排球.jpg", u"武术.jpg", u"游泳.jpg",
                        u"足球.jpg", u"羽毛球.jpg", u"瑜伽.jpg", u"健美操.jpg", u"网球.jpg", u"乒乓球.jpg", ]
-        img_dir = "C:\Users\wk\OneDrive\W\QiangGui\img"
+        img_dir = "C:\Users\pengw\OneDrive\W\QiangGui\img"
 
         for course in course_list:
             bmp = wx.Image(os.path.join(img_dir, course)).ConvertToBitmap()
@@ -418,7 +418,7 @@ class TeacherInfoPanel(wx.Panel):
             # self.hsizer.Clear()
             self.hsizer.Layout()
         # avatar 意为头像
-        img_dir = r"C:\Users\wk\OneDrive\W\QiangGui\img\avatar"
+        img_dir = r"C:\Users\pengw\OneDrive\W\QiangGui\img\avatar"
         path = os.path.join(img_dir, name + u".jpg")
         bmp = wx.Image(path).ConvertToBitmap()
         avatar = wx.StaticBitmap(self, bitmap=bmp)
@@ -489,7 +489,7 @@ class AboutPanel(wx.Panel):
 
         self.gbsizer = wx.GridBagSizer(vgap=5, hgap=5)
 
-        img_dir = "C:\Users\wk\OneDrive\W\QiangGui\img"
+        img_dir = "C:\Users\pengw\OneDrive\W\QiangGui\img"
         path = os.path.join(img_dir, "wechat200.jpg")
         image = wx.Image(path).ConvertToBitmap()
 
@@ -623,14 +623,14 @@ class TopStatesBar(wx.Panel):
         online = wx.StaticText(self, label=u"在线")
         internet = GenButton.GenButton(
             self, label=u"外网", size=(-1, 18), style=wx.BORDER_NONE)
-        image = wx.Image("C:\Users\wk\OneDrive\W\QiangGui\img\yellow.png").ConvertToBitmap()
+        image = wx.Image("C:\Users\pengw\OneDrive\W\QiangGui\img\yellow.png").ConvertToBitmap()
         internet_bmp = wx.StaticBitmap(self, bitmap=image)
         intranet = wx.StaticText(self, label=u"内网")
         image = wx.Image(
-            r"C:\Users\wk\OneDrive\W\QiangGui\img\red.png").ConvertToBitmap()
+            r"C:\Users\pengw\OneDrive\W\QiangGui\img\red.png").ConvertToBitmap()
         intranet_bmp = wx.StaticBitmap(self, bitmap=image)
         image = wx.Image(
-            r"C:\Users\wk\OneDrive\W\QiangGui\img\green.png").ConvertToBitmap()
+            r"C:\Users\pengw\OneDrive\W\QiangGui\img\green.png").ConvertToBitmap()
         green_bmp = wx.StaticBitmap(self, bitmap=image)
         # 选课开始时间 倒计时
         time = wx.StaticText(self, label=u"倒计时")

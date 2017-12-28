@@ -4,8 +4,56 @@
 		"selected_items":
 		[
 			[
+				"page",
+				"page_url"
+			],
+			[
+				"resource",
+				"resource_dir"
+			],
+			[
 				"down",
-				"downloaded"
+				"download"
+			],
+			[
+				"file",
+				"file_path"
+			],
+			[
+				"autho",
+				"author"
+			],
+			[
+				"Static",
+				"StaticBitmap"
+			],
+			[
+				"ALIGN",
+				"ALIGN_CENTER_VERTICAL"
+			],
+			[
+				"open",
+				"open_in_folder"
+			],
+			[
+				"_dir_",
+				"_dir_btn"
+			],
+			[
+				"fil",
+				"file_path"
+			],
+			[
+				"EVT",
+				"EVT_BUTTON"
+			],
+			[
+				"info",
+				"video_info"
+			],
+			[
+				"lecture",
+				"lecture_info"
 			],
 			[
 				"User",
@@ -348,10 +396,6 @@
 				"courseList"
 			],
 			[
-				"page",
-				"pageNum"
-			],
-			[
 				"cous",
 				"courseList"
 			],
@@ -370,10 +414,6 @@
 			[
 				"or",
 				"orderlist"
-			],
-			[
-				"EVT",
-				"EVT_LIST_ITEM_SELECTED"
 			],
 			[
 				"Add",
@@ -474,91 +514,19 @@
 			[
 				"pad",
 				"padding-top"
-			],
-			[
-				"list",
-				"list-style"
-			],
-			[
-				"mar",
-				"margin-bottom"
-			],
-			[
-				"margin",
-				"margin-top"
-			],
-			[
-				"min",
-				"min-height"
-			],
-			[
-				"mag",
-				"margin-left"
-			],
-			[
-				"wi",
-				"width"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"read",
-				"readInMemery"
-			],
-			[
-				"Model",
-				"Model"
-			],
-			[
-				"Tur",
-				"swampy.TurtleWorld"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "gui_code/main_gui.py",
+			"contents": "*.py[cw]\n/build\n/dist\n",
+			"file": "/E/temp/DGUTDesktop/.gitignore",
+			"file_size": 26,
+			"file_write_time": 131065398833969136,
 			"settings":
 			{
-				"buffer_size": 25180,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "# Python\n\n## metaclass dynamic generate class\n\nexample:\n```python\ndef a_function():\n    pass\n\nclass MetaClass():\n    __metaclass__ = a_function\n\n    pass\n```\n\n## 路径名包含特殊字符 \\x13\n\n无解\n\n    output_dir = \"C:\\Users\\wk\\OneDrive\\W\\QiangGui\\img\\23\"\n    \n    IOError: [Errno 22] invalid mode ('wb') or filename: u'C:\\\\Users\\\\wk\\\\OneDrive\\\\W\\\\QiangGui\\\\img\\x13\\\\\\u9648\\u8fdb.jpg'\n\n字符\\x10和\\x13，或者说ASCII 10和13，\\n \\r\n\n#### 结果\n\n错误信息不注意，是保存的时候除出了问题，而不是打开的时候 \\23 \n\\023  19  DC3  \\x13  ^S    (Device control 3) (XOFF)  (Default UNIX STOP char.)\n\n加上r就好了。 出错的前一行很重要！\n\n## json python object map\n\n|json|python|\n|---|---|\n|null|None|\n|false|False|\n|true|True|\n|string|unicode|\n|array|list|\n|object|dict|\n|number(int)|int long|\n|number(real)|float|\n\n\n## 网络编程 服务器跪了的情况\n\nstatus code \n\n### requests \n    \n    res.\n    ok status_code raise_for_status elapsed encoding apparent_encoding close connection is_redirect history links json raw content reason text cookies headers\n\n获取请求的内容\n\n    res.request.\n    body url headers method path_url  \n\n### iter_content(chunk_size=1)\n\n默认的chunk_size只有1 byte； 1MB = 1024 * 1024 * 1 Byte\n\n### 想法\n\n- 不设置超时。\n\n使用 多线程 或者 协程同一个请求发起多次，直到得到正常反馈就停止其他请求。服务器错误就继续。\n\n## 大文件内存、断电保护\n\n    file.flush() # 清除内部缓冲区 internal buffer\n    os.fsync()   # 清除 operating system buffer 把文件写到磁盘上\n\n## 下载\n\n\n### 文件大小\n\n    bytes = res.headers[\"Content-Length\"] \n\n### 网速\n\nbyte/time\n\n    KB = 1024Byte \n    KB/s\n\nMbps MB \n\nbits per second \n\nKiB KB\n\nbit binary digit\n\n\n### 下载进度\n\n\n\n### 断点下载 多线程、进程 下载同一文件 \n\n\n\n### 文件合并\n\n### 单位换算\n\nbyte bit kb mb gb \n\n\n## multiprocessing \n\n### 共享变量数据结构\n\nValue(type, initial_value)\n\n    from multiprocessing import Value\n\n    s = Value(\"i\", 0)\n    print s.value\n\n|typecode|python|\n|----|-----|\n|i|int|\n|u|unicode|\n|d|double|\n|f|float|\n\nArray(typecode, )\n\n### 终止进程\n\n    process.terminate()\n\n\n### 打包支持\n\n    multiprocessing.freeze_support()\n\n### CPU个数\n\n    multiprocessing.cpu_count()\n\n## ?\n\n    sys.stdout.write()\n    sys.stdout.flush()",
-			"file": "note/python笔记.md",
-			"file_size": 2471,
-			"file_write_time": 131032803520495376,
-			"settings":
-			{
-				"buffer_size": 1936,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "clients.py",
-			"settings":
-			{
-				"buffer_size": 9822,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "auth.py",
-			"settings":
-			{
-				"buffer_size": 17401,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "note/wx笔记.md",
-			"settings":
-			{
-				"buffer_size": 14000,
+				"buffer_size": 22,
 				"line_ending": "Windows"
 			}
 		}
@@ -931,16 +899,59 @@
 	[
 		"/C/Users/wk/OneDrive/W/QiangGui",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code",
-		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/failed",
 		"/C/Users/wk/OneDrive/W/QiangGui/note",
-		"/C/Users/wk/OneDrive/W/QiangGui/old_code",
 		"/C/Users/wk/OneDrive/W/QiangGui/ps"
 	],
 	"file_history":
 	[
+		"/E/temp/Niczy/main_gui.py",
+		"/E/temp/Niczy/widgets.py",
+		"/E/temp/Niczy/niczy_client.py",
+		"/E/temp/Niczy/develop_one_dir.spec",
+		"/E/temp/Niczy/development.spec",
+		"/E/temp/Niczy/version.txt",
+		"/E/temp/Niczy/build/development/pyimod00_crypto_key.py",
+		"/E/temp/Niczy/build/production/warnproduction.txt",
+		"/E/temp/Niczy/main_gui.spec",
+		"/E/temp/Niczy/resource.py",
+		"/E/temp/Niczy/production.spec",
+		"/C/Users/wk/AppData/Local/Temp/_MEI44242/Microsoft.VC90.CRT.manifest",
+		"/E/temp/Niczy/file_version_info.txt",
+		"/E/temp/Niczy/build/main_gui/warnmain_gui.txt",
+		"/E/temp/Niczy/.gitignore",
+		"/C/Users/wk/OneDrive/W/QiangGui/note/python笔记.md",
+		"/C/Users/wk/OneDrive/W/QiangGui/clients.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/main_gui.py",
+		"/E/temp/Niczy/tool.py",
+		"/C/Python27/lib/site-packages/wx-3.0-msw/wx/_controls.py",
+		"/C/Python27/lib/subprocess.py",
+		"/C/Users/wk/OneDrive/W/Niczy/niczy_client.py",
+		"/C/Users/wk/OneDrive/W/Niczy/widgets.py",
+		"/E/temp/Niczy/common_widgets.py",
+		"/C/Python27/Lib/site-packages/boa-constructor/PropEdit/Enumerations.py",
+		"/C/Python27/Lib/site-packages/boa-constructor/Inspector.py",
+		"/C/Python27/Lib/site-packages/boa-constructor/Boa.py",
+		"/C/Users/wk/.boa-constructor/prefs.rc.py",
+		"/E/temp/Niczy/a.version",
+		"/C/Python27/Lib/site-packages/PyInstaller/utils/cliutils/grab_version.py",
+		"/E/temp/Niczy/build/main_gui/main_gui.exe.manifest",
+		"/C/Users/wk/OneDrive/W/Niczy/main_gui.py",
+		"/C/Users/wk/OneDrive/W/Niczy/<string>",
+		"/C/Users/wk/OneDrive/W/Niczy/tool.py",
+		"/C/Users/wk/Desktop/code/myproject/test.py",
+		"/C/Users/wk/OneDrive/W/Niczy/niczy.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/useragent.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/helper.py",
+		"/C/Users/wk/OneDrive/shadowsock-config.json",
+		"/C/Users/wk/OneDrive/shadowsock-config.js",
+		"/C/Users/wk/OneDrive/W/QiangGui/auth.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/note/wx笔记.md",
+		"/C/Users/wk/OneDrive/W/QiangGui/笔记.md",
+		"/C/Users/wk/AppData/Local/Temp/Rar$DIa0.445/gw-redsocks.conf",
+		"/C/Users/wk/OneDrive/W/Niczy/gui.py",
+		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/dialog.py",
 		"/E/temp/log.txt",
 		"/E/temp/download.txt",
-		"/C/Users/wk/OneDrive/W/QiangGui/clients.py",
 		"/C/Users/wk/Downloads/jquery.speedtest.min.js",
 		"/C/Users/wk/OneDrive/W/QiangGui/sb.mp4",
 		"/C/Users/wk/OneDrive/W/QiangGui/hello.py",
@@ -951,7 +962,6 @@
 		"/C/Python27/Lib/site-packages/wx-3.0-msw/wx/gizmos.py",
 		"/C/Python27/Lib/site-packages/wx-3.0-msw/wx/webkit.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/avatar_process.py",
-		"/C/Users/wk/OneDrive/W/QiangGui/note/python笔记.md",
 		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-build",
 		"/C/Users/wk/AppData/Roaming/Sublime Text 3/Packages/User/Python.sublime-settings",
 		"/C/Program Files/wxPython3.0 Docs and Demos/demo/GridSimple.py",
@@ -959,13 +969,11 @@
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/login.py",
 		"/C/Users/wk/Downloads/radiobutton_sample.py",
 		"/C/Program Files/Internet Explorer/iexplore.exe",
-		"/C/Users/wk/OneDrive/W/QiangGui/auth.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/qiang.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/new_design.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/QiangGui.sublime-workspace",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/wx笔记.md",
 		"/C/Users/wk/OneDrive/W/QiangGui/.gitignore",
-		"/C/Users/wk/OneDrive/W/QiangGui/笔记.md",
 		"/C/Program Files/wxPython3.0 Docs and Demos/demo/Main.py",
 		"/C/Python27/lib/site-packages/wx-3.0-msw/wx/_core.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/gui_code/data_gen.py",
@@ -993,7 +1001,6 @@
 		"/C/Users/wk/login.py",
 		"/C/ws/code/fasong.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/all.html",
-		"/C/Users/wk/OneDrive/W/QiangGui/useragent.py",
 		"/C/Users/wk/OneDrive/W/QiangGui/jwc_auth.py",
 		"/C/Users/wk/Downloads/Sample file.csv",
 		"/C/Users/wk/OneDrive/W/wxpython/Python网络工具.md",
@@ -1019,53 +1026,12 @@
 		"/C/Users/wk/Downloads/ff-prompt.bat",
 		"/C/Users/wk/Downloads/README.txt",
 		"/C/Users/wk/Downloads/win32/VERSION",
-		"/C/Users/wk/OneDrive/shadowsock-config.js",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/编码心得.md",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/my_data.py",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/conf.py",
 		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/NetworkManager.rst",
 		"/C/Users/wk/OneDrive/W/wxpython/Sphinx文档.md",
-		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/QiangKeDoc.rst",
-		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/intro.rst",
-		"/C/ws/.ipython/README",
-		"/C/ws/.ipython/profile_default/startup/00-modules.py",
-		"/C/ws/.ipython/profile_default/startup/README",
-		"/E/book/Shadowsocks-win-2.5.6/pac.txt",
-		"/C/Users/wk/Desktop/code/report_ip.py",
-		"/C/Users/wk/OneDrive/W/wxpython/问题.md",
-		"/C/Users/wk/OneDrive/W/wxpython/大纲.md",
-		"/C/Users/wk/OneDrive/W/pengwk.com/pengwk.com",
-		"/C/Users/wk/OneDrive/W/pengwk.com/git-server.md",
-		"/C/Users/wk/Desktop/sshd_config",
-		"/C/Users/wk/OneDrive/W/Raspberry/权限.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/大纲.md",
-		"/C/Users/wk/OneDrive/W/pengwk.com/Debian登录记录.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/软件或系统编译.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/常用配置文件.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/Shell基本.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/连接.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/未知.md",
-		"/C/Users/wk/OneDrive/W/pengwk.com/Debian 后台.md",
-		"/C/Users/wk/OneDrive/W/pengwk.com/Debian 端口.md",
-		"/C/Users/wk/OneDrive/W/pengwk.com/阿里云推广.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/自动化.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/系统本身.md",
-		"/C/Users/wk/Downloads/涓嶈兘鐧粂outude鐨勮В鍐虫柟妗_txt",
-		"/C/Users/wk/OneDrive/W/Markdown.md",
-		"/C/Windows/ADVPCB99SE.INI",
-		"/C/Windows/AdvSch99SE.ini",
-		"/C/Users/wk/AppData/Local/VirtualStore/Windows/AdvSch99SE.ini",
-		"/E/Program/protel 99 se/System/ADVPCB.XRF",
-		"/E/Program/protel 99 se/System/advpcb.rcs",
-		"/E/Program/protel 99 se/System/ADVPCB.INS",
-		"/C/Users/wk/AppData/Local/Temp/xshDCDC.tmp",
-		"/C/Users/wk/OneDrive/W/Raspberry/file/xshell/SolarizedDark.xcs",
-		"/C/Users/wk/OneDrive/W/Raspberry/SolarizedLight.xcs",
-		"/C/Users/wk/OneDrive/Documents/solarized_light.xcs",
-		"/C/Users/wk/Documents/WindowsPowerShell/solarized-dark.reg",
-		"/C/Users/wk/Documents/WindowsPowerShell/a.reg",
-		"/C/Users/wk/OneDrive/W/Raspberry/启动级别.md",
-		"/C/Users/wk/OneDrive/W/Raspberry/硬件.md"
+		"/C/Users/wk/OneDrive/W/wxpython/mycode/doc/QiangKeDoc.rst"
 	],
 	"find":
 	{
@@ -1083,6 +1049,12 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"GenButton",
+			"None",
+			"queue",
+			"        \n",
+			"filesize",
+			"align",
 			"studentInfo",
 			" +",
 			"str_",
@@ -1158,175 +1130,35 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gui_code/main_gui.py",
+					"file": "/E/temp/DGUTDesktop/.gitignore",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 25180,
+						"buffer_size": 22,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								822,
-								822
+								21,
+								21
 							]
 						],
 						"settings":
 						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Theme - SoDaReloaded/light/icons/Langs/Git.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "note/python笔记.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1936,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1346,
-								1346
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3639.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "clients.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 9822,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6415,
-								6415
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5305.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "auth.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17401,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								863,
-								863
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 11382.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "note/wx笔记.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14000,
-						"regions":
-						{
-							"TagLint":
-							{
-								"flags": 2356,
-								"icon": "dot",
-								"regions":
-								[
-									[
-										5980,
-										5983
-									]
-								],
-								"scope": "variable.parameter"
-							}
-						},
-						"selection":
-						[
-							[
-								13903,
-								13903
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
-							"is_xml": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/MarkdownEditing/Markdown (Standard).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 21690.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1365,7 +1197,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 381.0
+		"height": 497.0
 	},
 	"output.find_results":
 	{
@@ -1441,7 +1273,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 280.0,
+	"side_bar_width": 267.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

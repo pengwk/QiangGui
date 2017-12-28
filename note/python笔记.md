@@ -87,6 +87,14 @@ byte/time
     KB = 1024Byte 
     KB/s
 
+Mbps MB 
+
+bits per second 
+
+KiB KB
+
+bit binary digit
+
 
 ### 下载进度
 
@@ -104,6 +112,18 @@ byte bit kb mb gb
 
 
 ## multiprocessing 
+
+### 关键字
+
+1. picklability
+2. Entry Point
+3. Proxies
+4. Pid
+5. Zombie
+6. Thread Safe
+7. Weakref
+8. callback
+9. bound or unbound methods
 
 ### 共享变量数据结构
 
@@ -140,3 +160,41 @@ Array(typecode, )
 
     sys.stdout.write()
     sys.stdout.flush()
+
+## urlparse
+
+### url的组成部分
+
+    from urlparse import urlparse
+    parsed = urlparse('http://user:pass@NetLoc:80/  path;parameters?query=argument#fragment')
+    print 'scheme  :', parsed.scheme
+    print 'netloc  :', parsed.netloc
+    print 'path    :', parsed.path
+    print 'params  :', parsed.params
+    print 'query   :', parsed.query
+    print 'fragment:', parsed.fragment
+    print 'username:', parsed.username
+    print 'password:', parsed.password
+    print 'hostname:', parsed.hostname, '(netloc in lower case)'
+    print 'port    :', parsed.port
+    
+    $ python urlparse_urlparseattrs.py
+
+    scheme  : http
+    netloc  : user:pass@NetLoc:80
+    path    : /path
+    params  : parameters
+    query   : query=argument
+    fragment: fragment
+    username: user
+    password: pass
+    hostname: netloc (netloc in lower case)
+    port    : 80
+
+
+### 博客、资料
+
+1. <a href="https://pymotw.com/2/urlparse/">urlparse参数解释</a>
+
+
+## 

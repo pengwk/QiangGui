@@ -286,7 +286,13 @@ class Niczy(object):
         # 名称 系列 图片 关键字
         _dict = {}
         p_b_span = []
-        #series = soup.find_all(attrs={"id": "carousel"})[0] # ul
+        _dict[u"series"] = []
+        series = soup.find_all(attrs={"id": "carousel"}) # ul
+        if series:
+            for li in series[0].find_all("li"):
+                url = "".join(["http://niczy.dgut.edu.cn/", li.p.a["href"]])
+                name = li.p.a.string
+                _dict[u"series"].append([name, url])
 
         lecture_info = soup.find_all(attrs={"class": "lectureInfo"})[0]
         _dict[u"img_url"] = lecture_info.img["src"]
@@ -303,6 +309,13 @@ class Niczy(object):
 
         return _dict
 
+def test():
+    n = Niczy(requests.Session())
+    url = "http://niczy.dgut.edu.cn/index.php?m=content&c=index&a=show&catid=10&id=4478"
+    _dict = n.get_info(url)
+    for key, value in _dict.items():
+        print key, value
+        
 from multiprocessing import Process, Value
 
 if __name__ == "__main__":
